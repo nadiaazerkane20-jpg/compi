@@ -1,0 +1,2415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>LaMaisonDeLena — Décoration premium</title>
+  <meta name="description" content="LaMaisonDeLena — Boutique décoration premium en France. Sélection de meubles design, avis vérifiés, livraison rapide offerte." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --bg-soft:#fffaf2;
+      --bg-card:#ffffff;
+      --bg-dark:#151515;
+      --text:#1c1b1a;
+      --text-soft:#6b665f;
+      --line:#eee5d6;
+      --accent:#fbedc6;
+      --accent-strong:#f4d48a;
+      --accent-2:#fbedc5;
+      --success:#00B67A;
+      --danger:#d35d4d;
+      --warning:#fff2eb;
+      --shadow-sm:0 8px 30px rgba(17,17,17,.06);
+      --shadow-md:0 18px 40px rgba(17,17,17,.08);
+      --shadow-lg:0 30px 80px rgba(17,17,17,.12);
+      --radius:16px;
+      --radius-sm:12px;
+      --container:1280px;
+      --header-h:76px;
+    }
+
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"DM Sans",system-ui,-apple-system,sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#fff 0%,#fffdf8 100%);
+      overflow-x:hidden;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea,select{font:inherit}
+    button{cursor:pointer;border:none;background:none}
+    .container{width:min(calc(100% - 32px),var(--container));margin:0 auto}
+    .page{display:none;min-height:60vh}
+    .section{padding:56px 0}
+    .section-lg{padding:72px 0}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;
+      background:rgba(251,237,198,.65);border:1px solid rgba(212,185,123,.22);font-size:13px;font-weight:700;color:#6e5a34
+    }
+    .title{
+      font-family:"Poppins",sans-serif;font-weight:700;letter-spacing:-0.03em;line-height:1.05;
+      font-size:clamp(30px,7vw,58px);margin:14px 0 14px
+    }
+    .title-md{
+      font-family:"Poppins",sans-serif;font-size:clamp(24px,5vw,40px);line-height:1.1;letter-spacing:-.03em;
+      margin:0 0 14px
+    }
+    .title-sm{
+      font-family:"Poppins",sans-serif;font-size:clamp(20px,4vw,28px);line-height:1.15;letter-spacing:-.02em;margin:0 0 10px
+    }
+    .text-soft{color:var(--text-soft)}
+    .muted{color:#8a847d}
+    .center{text-align:center}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid var(--line);
+      background:#fff;font-size:13px;font-weight:700;color:#5b554e
+    }
+    .btn{
+      min-height:56px;padding:16px 20px;border-radius:14px;font-weight:800;font-size:17px;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,opacity .25s ease;
+      width:100%
+    }
+    .btn:active{transform:scale(.985)}
+    .btn-primary{background:linear-gradient(180deg,#f7df9d 0%,#f0d17f 100%);box-shadow:0 12px 28px rgba(240,209,127,.35);color:#3e2f0c}
+    .btn-primary:hover{transform:translateY(-1px) scale(1.01);box-shadow:0 16px 30px rgba(240,209,127,.38)}
+    .btn-secondary{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+    .btn-dark{background:#171717;color:#fff;box-shadow:var(--shadow-sm)}
+    .grid{display:grid;gap:18px}
+    .card{
+      background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);
+      box-shadow:var(--shadow-sm);overflow:hidden
+    }
+    .announcement{
+      background:#121212;color:#fff;font-size:13px;position:sticky;top:0;z-index:90
+    }
+    .announcement-inner{
+      min-height:40px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:8px 16px
+    }
+    .announcement a{color:#fff;font-weight:700;display:inline-flex;align-items:center;gap:8px}
+    .tp-stars{color:var(--success);letter-spacing:1px;font-weight:900}
+    .header{
+      position:sticky;top:40px;z-index:80;background:rgba(255,255,255,.78);backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(234,225,211,.8)
+    }
+    .header-inner{
+      height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:16px
+    }
+    .logo{
+      font-family:"Poppins",sans-serif;font-weight:800;font-size:24px;letter-spacing:-.04em
+    }
+    .logo small{font-size:12px;font-weight:700;color:#8a847d;display:block;letter-spacing:.08em;text-transform:uppercase;margin-top:-4px}
+    .header-actions{display:flex;align-items:center;gap:10px}
+    .icon-btn{
+      width:46px;height:46px;border-radius:14px;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;background:#fff
+    }
+    .desktop-nav{display:none;gap:26px;align-items:center}
+    .desktop-nav a{font-weight:700;color:#544f49;position:relative}
+    .desktop-nav a:after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;background:#171717;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+    .desktop-nav a:hover:after,.desktop-nav a.active:after{transform:scaleX(1)}
+    .menu-overlay{
+      position:fixed;inset:0;background:rgba(16,16,16,.72);backdrop-filter:blur(10px);z-index:120;display:none
+    }
+    .menu-panel{
+      position:absolute;inset:0;background:linear-gradient(180deg,#fff 0%,#fffaf2 100%);padding:24px 20px 30px;display:flex;flex-direction:column
+    }
+    .menu-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+    .menu-links{display:grid;gap:12px}
+    .menu-links a{
+      min-height:58px;border-radius:16px;padding:0 18px;background:#fff;border:1px solid var(--line);
+      display:flex;align-items:center;justify-content:space-between;font-weight:800;font-family:"Poppins",sans-serif
+    }
+    .hero{
+      position:relative;overflow:hidden;padding:46px 0 28px;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(251,237,198,.95) 0%, rgba(251,237,198,.25) 30%, transparent 55%),
+        linear-gradient(180deg,#fffaf2 0%,#fff 100%);
+    }
+    .hero-grid{display:grid;gap:20px;align-items:end}
+    .hero-copy .subtitle{font-size:17px;line-height:1.7;color:#665f57;max-width:620px}
+    .hero-cta{display:grid;gap:12px;margin-top:22px}
+    .hero-proof{
+      display:grid;grid-template-columns:1fr;gap:12px;margin-top:22px
+    }
+    .proof-bar{
+      background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:var(--shadow-sm)
+    }
+    .proof-clients{font-weight:800}
+    .hero-visual{
+      position:relative;border-radius:24px;overflow:hidden;min-height:420px;background:#f8f1e1;
+      box-shadow:var(--shadow-lg);border:1px solid rgba(233,224,211,.7)
+    }
+    .hero-visual img{
+      width:100%;height:100%;object-fit:cover;transform:scale(1.03)
+    }
+    .hero-badge{
+      position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);padding:14px;border-radius:18px;box-shadow:var(--shadow-md);max-width:290px;border:1px solid rgba(255,255,255,.75)
+    }
+    .trust-strip{
+      padding:16px 0 8px
+    }
+    .trust-scroll{
+      display:flex;gap:12px;overflow:auto;padding-bottom:4px;scroll-snap-type:x proximity
+    }
+    .trust-item{
+      min-width:230px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;
+      display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-sm)
+    }
+    .trust-item svg{width:22px;height:22px;color:#5d4f2f}
+    .featured-layout{display:grid;gap:18px}
+    .product-card{
+      position:relative;display:block;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);
+      transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease
+    }
+    .product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#e7d7b6}
+    .product-media{
+      position:relative;aspect-ratio:1/1;background:linear-gradient(180deg,#fffaf2 0%,#fff 100%);overflow:hidden
+    }
+    .product-media img{
+      width:100%;height:100%;object-fit:contain;padding:18px;transition:transform .4s ease
+    }
+    .product-card:hover .product-media img{transform:scale(1.06)}
+    .sale-badge{
+      position:absolute;top:14px;left:14px;z-index:2;background:#171717;color:#fff;font-weight:800;font-size:13px;border-radius:999px;padding:8px 10px
+    }
+    .product-body{padding:16px}
+    .product-title{font-family:"Poppins",sans-serif;font-size:18px;line-height:1.2;margin:0 0 8px}
+    .product-sub{font-size:14px;color:var(--text-soft);margin-bottom:14px}
+    .price-row{display:flex;align-items:end;gap:10px;flex-wrap:wrap}
+    .price-old{text-decoration:line-through;color:#b56a61;font-weight:700}
+    .price-now{font-size:24px;font-family:"Poppins",sans-serif;font-weight:800}
+    .price-save{color:#7a6630;font-weight:800;background:#fbf0cf;padding:6px 9px;border-radius:999px;font-size:13px}
+    .swatches{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .swatch{
+      width:22px;height:22px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.12)
+    }
+    .features-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .feature-box{
+      padding:18px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(180deg,#fff 0%,#fffdf8 100%);box-shadow:var(--shadow-sm)
+    }
+    .feature-icon{
+      width:46px;height:46px;border-radius:14px;background:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:14px
+    }
+    .feature-icon svg{width:22px;height:22px}
+    .testimonials-wrap{
+      background:linear-gradient(180deg,#fffdf8 0%,#fff7ea 100%);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:var(--shadow-md)
+    }
+    .review-slider{
+      display:grid;grid-auto-flow:column;grid-auto-columns:88%;gap:14px;overflow:auto;scroll-snap-type:x mandatory;padding-bottom:6px
+    }
+    .review-card{
+      scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow-sm)
+    }
+    .review-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .review-top img{width:54px;height:54px;border-radius:50%;object-fit:cover}
+    .review-name{font-weight:800}
+    .review-meta{font-size:13px;color:#827a73}
+    .stars{color:var(--success);font-weight:900;letter-spacing:1px}
+    .verified{
+      display:inline-flex;align-items:center;gap:7px;border-radius:999px;background:#eefaf5;color:#12714f;padding:6px 10px;font-size:12px;font-weight:800;margin-top:12px
+    }
+    .tp-widget{
+      padding:18px;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);display:grid;gap:14px
+    }
+    .tp-widget a{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .tp-mark{display:flex;align-items:center;gap:12px}
+    .tp-logo{
+      width:38px;height:38px;border-radius:12px;background:#00B67A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900
+    }
+    .faq-tabs-wrap{display:grid;gap:18px}
+    .faq-tabs{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px
+    }
+    .faq-tab{
+      min-height:52px;padding:0 14px;border-radius:14px;border:1px solid var(--line);background:#fff;font-weight:800;color:#5f5851
+    }
+    .faq-tab.active{background:var(--accent);border-color:#eed7a4;color:#3f3315}
+    .faq-group{display:none}
+    .faq-group.active{display:block}
+    .accordion{
+      border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden;box-shadow:var(--shadow-sm)
+    }
+    .accordion + .accordion{margin-top:12px}
+    .accordion-btn{
+      width:100%;min-height:60px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;font-weight:800
+    }
+    .accordion-btn svg{width:18px;height:18px;transition:transform .25s ease}
+    .accordion.active .accordion-btn svg{transform:rotate(180deg)}
+    .accordion-content{
+      max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 18px
+    }
+    .accordion.active .accordion-content{padding:0 18px 16px}
+    .newsletter{
+      background:linear-gradient(135deg,#171717 0%,#2a241c 100%);color:#fff;border-radius:28px;padding:26px;box-shadow:var(--shadow-lg)
+    }
+    .newsletter-form{display:grid;gap:12px;margin-top:18px}
+    .newsletter input,.contact-form input,.contact-form textarea,.collection-tools select{
+      min-height:56px;border-radius:14px;border:1px solid var(--line);padding:0 16px;background:#fff;color:#1c1b1a
+    }
+    .contact-form textarea{min-height:148px;padding-top:16px;resize:vertical}
+    .collection-hero{
+      padding:42px 0 18px;background:linear-gradient(180deg,#fffaf2 0%,#fff 100%)
+    }
+    .collection-tools{
+      display:grid;gap:12px;margin:20px 0 10px
+    }
+    .collection-grid{display:grid;grid-template-columns:1fr;gap:18px}
+    .page-shell{padding:24px 0 36px}
+    .product-page{
+      padding:18px 0 72px
+    }
+    .product-top{display:grid;gap:18px}
+    .gallery-main{
+      aspect-ratio:1/1;background:linear-gradient(180deg,#fffaf2 0%,#fff 100%);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow-md)
+    }
+    .gallery-main img{width:100%;height:100%;object-fit:contain;padding:20px}
+    .thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:10px}
+    .thumb{
+      aspect-ratio:1/1;border-radius:14px;border:1px solid var(--line);background:#fff;overflow:hidden;padding:8px;cursor:pointer
+    }
+    .thumb.active{border-color:#d8bf84;box-shadow:0 0 0 3px rgba(242,216,143,.25)}
+    .thumb img{width:100%;height:100%;object-fit:contain}
+    .product-panel{
+      background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow-md);position:relative
+    }
+    .product-panel .title-sm{font-size:32px}
+    .tp-inline{
+      display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid var(--line)
+    }
+    .variants{display:grid;gap:10px;margin-top:16px}
+    .variant-label{font-weight:800}
+    .variant-pills{display:flex;gap:10px;flex-wrap:wrap}
+    .variant-pill{
+      min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:800;color:#544e47
+    }
+    .variant-pill.active{background:var(--accent);border-color:#e1c57f;color:#3e3110}
+    .urgency{
+      border:1px solid #efb0a8;background:var(--warning);border-radius:16px;padding:14px 16px;margin:14px 0 12px
+    }
+    .urgency strong{display:block;font-size:15px}
+    .mini-trust{
+      display:flex;gap:10px;overflow:auto;padding-bottom:4px;margin-top:14px
+    }
+    .mini-trust .pill{white-space:nowrap}
+    .feature-badges{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .mini-feature{
+      border:1px solid var(--line);border-radius:18px;padding:16px;background:#fff;box-shadow:var(--shadow-sm)
+    }
+    .mini-feature svg{width:22px;height:22px;margin-bottom:10px}
+    .specs{
+      width:100%;border-collapse:separate;border-spacing:0 8px
+    }
+    .specs tr td{
+      padding:14px 16px;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+    }
+    .specs tr td:first-child{
+      width:42%;border-left:1px solid var(--line);border-radius:12px 0 0 12px;color:#7f776f;font-size:14px
+    }
+    .specs tr td:last-child{
+      border-right:1px solid var(--line);border-radius:0 12px 12px 0;font-weight:800
+    }
+    .parcel{
+      background:linear-gradient(180deg,#fffaf2 0%,#fff 100%);border:1px solid var(--line);border-radius:20px;padding:18px
+    }
+    .check-list{display:grid;gap:12px;margin-top:16px}
+    .check-item{display:flex;align-items:flex-start;gap:12px}
+    .check{
+      flex:0 0 24px;width:24px;height:24px;border-radius:50%;background:#eefaf5;color:#12714f;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;margin-top:1px
+    }
+    .product-desc p{line-height:1.8;color:#524d47}
+    .product-desc strong{color:#201f1d}
+    .recommend-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    .contact-grid{display:grid;gap:18px}
+    .legal-card,.contact-card{
+      background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow-sm)
+    }
+    .footer{
+      background:linear-gradient(180deg,#171717 0%,#0f0f0f 100%);color:#fff;margin-top:56px
+    }
+    .footer-top{padding:36px 0 24px}
+    .footer-grid{display:grid;gap:20px}
+    .footer-brand .logo{color:#fff}
+    .footer-brand p{color:#c9c2b8;line-height:1.7}
+    .footer-col h4{
+      font-family:"Poppins",sans-serif;font-size:16px;margin:0 0 14px;color:#fff
+    }
+    .footer-links{display:grid;gap:10px}
+    .footer-links a{color:#c9c2b8}
+    .socials{display:flex;gap:10px;margin-top:14px}
+    .socials a{
+      width:44px;height:44px;border-radius:14px;border:1px solid rgba(255,255,255,.12);display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04)
+    }
+    .payments{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .pay{
+      min-width:72px;height:42px;border-radius:12px;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;color:#fff;background:rgba(255,255,255,.04);font-weight:800
+    }
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.08);padding:18px 0 92px;color:#c9c2b8;font-size:14px
+    }
+    .fade{
+      opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease
+    }
+    .fade.show{opacity:1;transform:translateY(0)}
+    .separator{height:1px;background:linear-gradient(90deg,transparent,rgba(224,212,190,.85),transparent);margin:22px 0}
+
+    @media (min-width:768px){
+      .container{width:min(calc(100% - 48px),var(--container))}
+      .section{padding:68px 0}
+      .section-lg{padding:92px 0}
+      .hero-grid{grid-template-columns:1.05fr .95fr;gap:24px}
+      .hero-cta{grid-template-columns:auto auto;justify-content:flex-start}
+      .hero-proof{grid-template-columns:1fr 1fr}
+      .trust-scroll{display:grid;grid-template-columns:repeat(4,1fr);overflow:visible}
+      .trust-item{min-width:0}
+      .featured-layout{grid-template-columns:1.2fr .8fr;align-items:stretch}
+      .featured-right{display:grid;gap:18px}
+      .features-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .review-slider{grid-auto-columns:42%}
+      .faq-tabs-wrap{grid-template-columns:280px 1fr;align-items:start}
+      .faq-tabs{grid-template-columns:1fr}
+      .collection-tools{grid-template-columns:220px 220px 1fr;align-items:center}
+      .collection-grid{grid-template-columns:repeat(2,1fr)}
+      .product-top{grid-template-columns:1.05fr .95fr;align-items:start}
+      .feature-badges{grid-template-columns:repeat(4,minmax(0,1fr))}
+      .recommend-grid{grid-template-columns:repeat(3,1fr)}
+      .contact-grid{grid-template-columns:1.05fr .95fr}
+      .footer-grid{grid-template-columns:1.35fr repeat(4,1fr)}
+      
+    }
+    @media (min-width:1024px){
+      .desktop-nav{display:flex}
+      .menu-btn{display:none}
+      .header-actions .icon-btn.cart-btn{margin-left:4px}
+      .hero{padding:56px 0 34px}
+      .hero-visual{min-height:560px}
+      .review-slider{grid-auto-columns:31%}
+      .collection-grid{grid-template-columns:repeat(3,1fr)}
+      .recommend-grid{grid-template-columns:repeat(4,1fr)}
+      .featured-layout{grid-template-columns:1.15fr .85fr}
+    }
+    @media (max-width:1023px){
+      .header{top:40px}
+    }
+    @media (max-width:767px){
+      .announcement-inner{justify-content:center;text-align:center}
+      .header-inner{height:72px}
+      .footer-top{padding-bottom:10px}
+      .footer-col details{
+        border-top:1px solid rgba(255,255,255,.08);padding:12px 0
+      }
+      .footer-col summary{
+        list-style:none;cursor:pointer;font-family:"Poppins",sans-serif;font-size:16px;font-weight:700
+      }
+      .footer-col summary::-webkit-details-marker{display:none}
+      .desktop-only{display:none !important}
+    }
+
+    .container{padding-left:max(0px, env(safe-area-inset-left));padding-right:max(0px, env(safe-area-inset-right))}
+    body{font-size:16px}
+    .product-card,.review-card,.contact-card,.legal-card,.product-panel,.feature-box,.mini-feature,.tp-widget{will-change:transform}
+    .review-slider,.trust-scroll,.mini-trust{-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .review-slider::-webkit-scrollbar,.trust-scroll::-webkit-scrollbar,.mini-trust::-webkit-scrollbar{display:none}
+    .route-link,.faq-tab,.accordion-btn,.variant-pill,.thumb,.icon-btn{touch-action:manipulation}
+    .product-media,.gallery-main{background:#fffaf2}
+    .hero-copy .subtitle,.product-desc p,.text-soft{font-size:16px}
+    .announcement{position:sticky}
+    .btn,.faq-tab,.accordion-btn,.menu-links a,.icon-btn{min-height:44px}
+    
+    .footer-bottom{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+    @media (max-width:767px){
+      body{font-size:16px}
+      .container{width:min(calc(100% - 24px),var(--container))}
+      .section{padding:44px 0}
+      .section-lg{padding:56px 0}
+      .title{font-size:clamp(28px,10vw,40px);line-height:1.08}
+      .title-md{font-size:clamp(24px,7vw,32px)}
+      .title-sm{font-size:clamp(22px,6.3vw,28px)}
+      .hero{padding:22px 0 18px}
+      .hero-grid{gap:16px}
+      .hero-visual{min-height:320px;border-radius:20px}
+      .hero-badge{left:12px;right:12px;bottom:12px;max-width:none;padding:12px}
+      .hero-cta{grid-template-columns:1fr}
+      .hero-proof{gap:10px}
+      .proof-bar{padding:12px 14px;border-radius:16px}
+      .trust-strip{padding:12px 0 0}
+      .trust-item{min-width:82%;padding:12px 14px}
+      .featured-layout,.featured-right,.collection-grid,.recommend-grid,.features-grid,.feature-badges,.contact-grid,.footer-grid{grid-template-columns:1fr}
+      .product-card{border-radius:18px}
+      .product-media img{padding:14px}
+      .product-body{padding:14px}
+      .product-title{font-size:17px}
+      .price-now{font-size:22px}
+      .review-slider{grid-auto-columns:92%}
+      .review-card{padding:16px}
+      .faq-tabs{grid-template-columns:1fr 1fr}
+      .faq-tab{font-size:14px;padding:10px 12px}
+      .accordion-btn{padding:16px;font-size:16px}
+      .collection-hero{padding:28px 0 10px}
+      .collection-tools{grid-template-columns:1fr;gap:10px}
+      .collection-tools select{width:100%}
+      .product-page{padding:10px 0 84px}
+      .product-top{gap:14px}
+      .gallery-main{border-radius:18px}
+      .gallery-main img{padding:14px}
+      .thumbs{gap:8px}
+      .thumb{border-radius:12px;padding:6px}
+      .product-panel{padding:16px;border-radius:18px}
+      .product-panel .title-sm{font-size:28px}
+      .variant-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+      .variant-pill{width:100%;justify-content:center}
+      .mini-trust{padding-bottom:2px}
+      .mini-trust .pill{font-size:12px;padding:8px 10px}
+      .specs{border-spacing:0 6px}
+      .specs tr td{padding:12px 12px}
+      .specs tr td:first-child{width:40%;font-size:13px}
+      .parcel{padding:16px;border-radius:18px}
+      .newsletter{padding:20px;border-radius:22px}
+      .newsletter-form{grid-template-columns:1fr}
+      .footer{margin-top:40px}
+      .footer-top{padding:28px 0 10px}
+      .footer-brand p{font-size:15px}
+      .socials a{width:42px;height:42px}
+      .pay{min-width:64px;height:38px;font-size:13px}
+      
+      
+      
+      .desktop-nav{display:none !important}
+      .menu-btn{display:inline-flex !important}
+    }
+    @media (max-width:420px){
+      .container{width:min(calc(100% - 20px),var(--container))}
+      .announcement-inner{gap:6px;font-size:12px;padding:8px 10px}
+      .header{top:40px}
+      .header-inner{height:68px}
+      .logo{font-size:21px}
+      .logo small{font-size:10px}
+      .icon-btn{width:44px;height:44px;border-radius:12px}
+      .hero-visual{min-height:280px}
+      .review-slider{grid-auto-columns:96%}
+      .trust-item{min-width:88%}
+      .faq-tabs{grid-template-columns:1fr 1fr}
+      .faq-tab{min-height:48px;font-size:13px}
+      .variant-pills{grid-template-columns:1fr 1fr}
+      .product-panel .title-sm{font-size:25px}
+      .btn{font-size:17px}
+    }
+
+
+    .product-top{align-items:start}
+    .gallery-wrap{position:relative}
+    .gallery-main{
+      display:flex;align-items:center;justify-content:center;
+      background:
+        radial-gradient(circle at top, rgba(251,237,198,.85) 0%, rgba(251,237,198,.28) 26%, transparent 58%),
+        linear-gradient(180deg,#fffdf8 0%,#fff 100%);
+    }
+    .gallery-main img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      transform:scale(1.02);
+    }
+    .product-panel{
+      display:grid;
+      gap:10px;
+    }
+    .product-title-wrap{
+      display:grid;
+      gap:10px;
+      padding-bottom:4px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:4px;
+    }
+    .product-price-box{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      padding:14px;
+      background:linear-gradient(180deg,#fffaf2 0%,#fff 100%);
+      border:1px solid var(--line);
+      border-radius:18px;
+    }
+    .product-page .price-row{
+      align-items:center;
+    }
+    .product-page .price-now{
+      font-size:34px;
+      line-height:1;
+    }
+    .product-page .price-old{
+      font-size:18px;
+    }
+    .product-page .price-save{
+      font-size:12px;
+      padding:7px 10px;
+    }
+    .product-cta-stack{
+      display:grid;
+      gap:12px;
+    }
+    .variant-select{
+      width:100%;
+      min-height:56px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#fff;
+      padding:0 16px;
+      color:#1c1b1a;
+      box-shadow:var(--shadow-sm);
+      appearance:none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, #6a6259 50%),
+        linear-gradient(135deg, #6a6259 50%, transparent 50%);
+      background-position:
+        calc(100% - 22px) calc(50% - 3px),
+        calc(100% - 16px) calc(50% - 3px);
+      background-size:6px 6px, 6px 6px;
+      background-repeat:no-repeat;
+    }
+    .thumbs{
+      grid-template-columns:repeat(4,minmax(0,1fr));
+    }
+    .thumb{
+      background:linear-gradient(180deg,#fffaf2 0%,#fff 100%);
+    }
+    .mini-trust{
+      margin-top:4px;
+    }
+    .mini-trust .pill{
+      background:#fffaf2;
+    }
+
+    @media (min-width:768px){
+      .product-top{
+        grid-template-columns:minmax(0,1.1fr) minmax(420px,.9fr);
+        gap:26px;
+      }
+      .gallery-wrap{
+        position:sticky;
+        top:130px;
+      }
+      .gallery-main{
+        min-height:620px;
+      }
+      .gallery-main img{
+        padding:30px;
+      }
+    }
+
+    @media (max-width:767px){
+      .product-page{
+        padding-top:6px;
+      }
+      .product-top{
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+      .gallery-wrap{
+        order:1;
+      }
+      .product-panel{
+        order:2;
+        padding:16px;
+      }
+      .gallery-main{
+        min-height:360px;
+      }
+      .gallery-main img{
+        padding:18px;
+        transform:none;
+      }
+      .thumbs{
+        margin-top:8px;
+        gap:8px;
+      }
+      .product-title-wrap{
+        gap:8px;
+      }
+      .product-panel .title-sm{
+        font-size:26px;
+        line-height:1.1;
+      }
+      .product-price-box{
+        padding:12px;
+        gap:8px;
+        border-radius:16px;
+      }
+      .product-page .price-now{
+        font-size:30px;
+      }
+      .product-page .price-old{
+        font-size:16px;
+      }
+      .variant-select{
+        min-height:54px;
+        font-size:16px;
+      }
+    }
+
+  
+    .collection-nav-pills{
+      display:flex;gap:10px;overflow:auto;padding:8px 0 4px;margin-top:16px;scrollbar-width:none
+    }
+    .collection-nav-pills::-webkit-scrollbar{display:none}
+    .collection-section{padding:28px 0}
+    .collection-section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+    .collection-section-grid{display:grid;grid-template-columns:1fr;gap:18px}
+    .ext-card-tag{
+      font-size:12px;font-weight:800;color:#6f654d;background:#fbf0cf;padding:6px 9px;border-radius:999px;display:inline-flex;align-items:center;gap:6px
+    }
+    .ext-desc{font-size:14px;color:var(--text-soft);line-height:1.6;margin-top:10px}
+    @media (min-width:768px){
+      .collection-section-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (min-width:1024px){
+      .collection-section-grid{grid-template-columns:repeat(3,1fr)}
+    }
+
+
+    .related-compact{
+      margin-top:14px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:linear-gradient(180deg,#fffdf8 0%,#fff 100%);
+      padding:18px;
+      box-shadow:var(--shadow-sm);
+    }
+    .related-compact-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    .related-compact-card{
+      display:grid;
+      grid-template-columns:84px 1fr;
+      gap:12px;
+      align-items:center;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:10px;
+      background:#fff;
+      box-shadow:var(--shadow-sm);
+    }
+    .related-compact-card img{
+      width:84px;
+      height:84px;
+      object-fit:contain;
+      border-radius:12px;
+      background:#fffaf2;
+      padding:8px;
+    }
+    .related-compact-card h4{
+      margin:0 0 6px;
+      font-family:"Poppins",sans-serif;
+      font-size:15px;
+      line-height:1.2;
+    }
+    .related-compact-card p{
+      margin:0;
+      font-size:13px;
+      color:var(--text-soft);
+      line-height:1.45;
+    }
+    .related-compact-price{
+      margin-top:8px;
+      font-weight:800;
+      font-size:15px;
+    }
+    @media (min-width:768px){
+      .related-compact-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+</style>
+</head>
+<body>
+  <div class="announcement">
+    <div class="announcement-inner">
+      <span>✦ LIVRAISON RAPIDE OFFERTE</span>
+      <span>•</span>
+      <a href="https://trustpilot.customerthread.com/?country=FR&shop=LaMaisonDeLena&logo=&url=LaMaisonDeLena.com" target="_blank" rel="noopener">
+        <span class="tp-stars">★★★★★</span>
+        <span>4,8/5 sur Trustpilot</span>
+      </a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#home" class="logo route-link" aria-label="LaMaisonDeLena">
+        LaMaisonDeLena
+        <small>Décoration premium</small>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="#home" class="route-link nav-link">Accueil</a>
+        <a href="#collection" class="route-link nav-link">Collection</a>
+        <a href="#faq" class="route-link nav-link">FAQ</a>
+        <a href="#contact" class="route-link nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn menu-btn" id="openMenu" aria-label="Ouvrir le menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2" stroke-linecap="round">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+          </svg>
+        </button>
+        <a href="#collection" class="icon-btn cart-btn route-link" aria-label="Voir la collection">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="20" r="1"></circle>
+            <circle cx="18" cy="20" r="1"></circle>
+            <path d="M2 3h3l3.6 10.6a1 1 0 0 0 .95.68H18.4a1 1 0 0 0 .96-.73L21 6H6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <div class="menu-panel">
+      <div class="menu-top">
+        <div class="logo">LaMaisonDeLena<small>Décoration premium</small></div>
+        <button class="icon-btn" id="closeMenu" aria-label="Fermer le menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2" stroke-linecap="round">
+            <path d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="menu-links">
+        <a href="#home" class="route-link mobile-route">Accueil
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#collection" class="route-link mobile-route">Collection
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#faq" class="route-link mobile-route">FAQ
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="route-link mobile-route">Contact
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div style="margin-top:auto" class="tp-widget">
+        <a href="https://trustpilot.customerthread.com/?country=FR&shop=LaMaisonDeLena&logo=&url=LaMaisonDeLena.com" target="_blank" rel="noopener">
+          <div class="tp-mark">
+            <div class="tp-logo">★</div>
+            <div>
+              <strong>Excellent 4,8/5</strong><br>
+              <span class="tp-stars">★★★★★</span>
+            </div>
+          </div>
+          <strong>Trustpilot</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section id="home" class="page">
+      <div class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy fade">
+            <span class="eyebrow">Décoration iconique • Sélection premium</span>
+            <h1 class="title">Des pièces design pensées pour transformer votre intérieur.</h1>
+            <p class="subtitle">
+              Chez <strong>LaMaisonDeLena</strong>, nous sélectionnons des objets décoratifs et meubles iconiques qui allient esthétique contemporaine,
+              finitions soignées et présence visuelle forte. Une boutique pensée pour les amateurs de décoration élégante, durable et intemporelle.
+            </p>
+            <div class="hero-cta">
+              <a href="#collection" class="btn btn-primary route-link">Voir la collection</a>
+              <a href="#faq" class="btn btn-secondary route-link">En savoir plus</a>
+            </div>
+            <div class="hero-proof">
+              <div class="proof-bar">
+                <div>
+                  <div class="proof-clients">+3000 CLIENTS SATISFAITS</div>
+                  <div class="muted">Des commandes expédiées partout en France</div>
+                </div>
+              </div>
+              <a class="proof-bar" href="https://trustpilot.customerthread.com/?country=FR&shop=LaMaisonDeLena&logo=&url=LaMaisonDeLena.com" target="_blank" rel="noopener">
+                <div>
+                  <div style="font-weight:800">Excellent sur Trustpilot</div>
+                  <div class="tp-stars">★★★★★</div>
+                </div>
+                <strong>4,8/5</strong>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual fade">
+            <img src="https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR0492215.jpg?t=big" alt="Meuble design premium">
+            <div class="hero-badge">
+              <div class="pill" style="margin-bottom:10px">Édition la plus demandée</div>
+              <strong style="display:block;font-family:Poppins,sans-serif;font-size:18px;margin-bottom:6px">Componibili grand format</strong>
+              <span class="text-soft">L’alliance parfaite entre rangement discret et design sculptural.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-strip">
+        <div class="container">
+          <div class="trust-scroll fade">
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7l-8-4-8 4v5c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V7z"/><path d="M9 12l2 2 4-4"/></svg>
+              <div><strong>Livraison sécurisée</strong><div class="muted">Suivi inclus en France</div></div>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18"/><path d="M12 3v18"/><circle cx="12" cy="12" r="9"/></svg>
+              <div><strong>Paiement crypté</strong><div class="muted">100% protégé</div></div>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+              <div><strong>Satisfait ou remboursé</strong><div class="muted">Retours sous 30 jours</div></div>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s8-4.5 8-11a5 5 0 0 0-8-4 5 5 0 0 0-8 4c0 6.5 8 11 8 11z"/></svg>
+              <div><strong>Support réactif</strong><div class="muted">Conseils déco inclus</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section-lg">
+        <div class="container">
+          <div class="center fade" style="max-width:760px;margin:0 auto 26px">
+            <span class="eyebrow">Collection mise en avant</span>
+            <h2 class="title-md">Nos pièces signature du moment</h2>
+            <p class="text-soft">Une sélection inspirée des intérieurs les plus raffinés — lignes iconiques, couleurs profondes, rendu premium.</p>
+          </div>
+
+          <div class="featured-layout">
+            <a href="#product-componibili-2" class="product-card route-link fade">
+              <div class="product-media" style="aspect-ratio:4/3">
+                <span class="sale-badge">-57%</span>
+                <img src="https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04922AM.jpg?t=big" alt="Componibili grand format 2 portes">
+              </div>
+              <div class="product-body">
+                <h3 class="product-title">Componibili Grand Format — 2 Portes</h3>
+                <p class="product-sub">La pièce sculpturale qui structure immédiatement un salon, une chambre ou une entrée.</p>
+                <div class="price-row">
+                  <span class="price-old">211€</span>
+                  <span class="price-now">89,99€</span>
+                  <span class="price-save">Économie 121€</span>
+                </div>
+                <div class="swatches">
+                  <span class="swatch" style="background:#1f1f1f"></span>
+                  <span class="swatch" style="background:#f3f0e8"></span>
+                  <span class="swatch" style="background:#c67846"></span>
+                  <span class="swatch" style="background:#d7c8a1"></span>
+                </div>
+              </div>
+            </a>
+
+            <div class="featured-right">
+              <a href="#product-componibili-3" class="product-card route-link fade">
+                <div class="product-media">
+                  <span class="sale-badge">-67%</span>
+                  <img src="https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04923TO.jpg?t=big" alt="Componibili grand format 3 portes">
+                </div>
+                <div class="product-body">
+                  <h3 class="product-title">Componibili Grand Format — 3 Portes</h3>
+                  <div class="price-row">
+                    <span class="price-old">270€</span>
+                    <span class="price-now">89,99€</span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#product-componibili-colors" class="product-card route-link fade">
+                <div class="product-media">
+                  <span class="sale-badge">-26%</span>
+                  <img src="https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04966AZ.jpg?t=big" alt="Componibili new colors">
+                </div>
+                <div class="product-body">
+                  <h3 class="product-title">Componibili New Colors</h3>
+                  <div class="price-row">
+                    <span class="price-old">122€</span>
+                    <span class="price-now">89,99€</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div style="margin-top:24px" class="center fade">
+            <a href="#collection" class="btn btn-secondary route-link" style="max-width:280px;margin:0 auto">Découvrir tous les produits</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="center fade" style="max-width:760px;margin:0 auto 26px">
+            <span class="eyebrow">Caractéristiques & avantages</span>
+            <h2 class="title-md">Une expérience d’achat pensée pour une décoration sans compromis</h2>
+          </div>
+
+          <div class="features-grid fade">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3f3315" stroke-width="1.8"><path d="M3 7h14l4 4v6H3z"/><path d="M16 7V3H8v4"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>
+              </div>
+              <strong>Livraison rapide</strong>
+              <p class="text-soft">Expédition suivie et présentation soignée, idéale pour recevoir votre pièce en parfait état.</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3f3315" stroke-width="1.8"><path d="M12 22s8-4.5 8-11V6l-8-4-8 4v5c0 6.5 8 11 8 11z"/><path d="M9 12l2 2 4-4"/></svg>
+              </div>
+              <strong>Paiement sécurisé</strong>
+              <p class="text-soft">Transactions protégées et interface simple pour acheter en toute sérénité.</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3f3315" stroke-width="1.8"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v6h6"/></svg>
+              </div>
+              <strong>Retours sous 30 jours</strong>
+              <p class="text-soft">Prenez le temps de visualiser le produit dans votre intérieur et décidez librement.</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3f3315" stroke-width="1.8"><path d="M12 17.3l-6.2 3.7 1.7-7-5.5-4.8 7.2-.6L12 2l2.8 6.6 7.2.6-5.5 4.8 1.7 7z"/></svg>
+              </div>
+              <strong>Qualité premium</strong>
+              <p class="text-soft">Des lignes raffinées et des finitions qui valorisent immédiatement votre décoration.</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3f3315" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <strong>Support réactif</strong>
+              <p class="text-soft">Une équipe disponible pour vous orienter selon votre style, vos dimensions et vos envies.</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#3f3315" stroke-width="1.8"><path d="M12 21C6 18 4 14 4 10a4 4 0 0 1 7-2.6A4 4 0 0 1 18 10c0 4-2 8-6 11z"/></svg>
+              </div>
+              <strong>Sélection décorative</strong>
+              <p class="text-soft">Des produits choisis pour leur impact visuel et leur capacité à créer une ambiance unique.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-lg">
+        <div class="container">
+          <div class="testimonials-wrap fade">
+            <div class="center" style="max-width:760px;margin:0 auto 24px">
+              <span class="eyebrow">Testimonials #38</span>
+              <h2 class="title-md">Ce que nos clients disent</h2>
+              <p class="text-soft">Une boutique plébiscitée pour la qualité perçue, la livraison rapide et le rendu premium des produits.</p>
+              <div style="display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px">
+                <span class="tp-stars" style="font-size:18px">★★★★★</span>
+                <strong>4,8/5</strong>
+                <span class="muted">Excellent sur Trustpilot</span>
+              </div>
+            </div>
+
+            <div class="review-slider" id="homeReviews">
+              <article class="review-card">
+                <div class="review-top">
+                  <img src="https://i.pravatar.cc/100?img=12" alt="Client">
+                  <div><div class="review-name">Camille R.</div><div class="review-meta">12 mars 2026</div></div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>Le rendu dans mon salon est incroyable. Le meuble donne immédiatement une impression plus haut de gamme à la pièce. Emballage très soigné.</p>
+                <span class="verified">Achat Vérifié ✓</span>
+              </article>
+              <article class="review-card">
+                <div class="review-top">
+                  <img src="https://i.pravatar.cc/100?img=21" alt="Client">
+                  <div><div class="review-name">Sophie L.</div><div class="review-meta">7 mars 2026</div></div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>J’avais peur que ce soit trop imposant, mais les proportions sont parfaites. Super pratique et très élégant. Vraiment fidèle aux photos.</p>
+                <span class="verified">Achat Vérifié ✓</span>
+              </article>
+              <article class="review-card">
+                <div class="review-top">
+                  <img src="https://i.pravatar.cc/100?img=35" alt="Client">
+                  <div><div class="review-name">Amandine G.</div><div class="review-meta">3 mars 2026</div></div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>Très belle qualité visuelle. J’ai reçu plusieurs compliments dès les premiers jours. Service client sérieux et livraison plus rapide que prévu.</p>
+                <span class="verified">Achat Vérifié ✓</span>
+              </article>
+              <article class="review-card">
+                <div class="review-top">
+                  <img src="https://i.pravatar.cc/100?img=44" alt="Client">
+                  <div><div class="review-name">Julie M.</div><div class="review-meta">26 février 2026</div></div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>Une vraie pièce signature pour mon entrée. Le style est minimaliste mais très présent. C’est exactement le type de décoration que je cherchais.</p>
+                <span class="verified">Achat Vérifié ✓</span>
+              </article>
+              <article class="review-card">
+                <div class="review-top">
+                  <img src="https://i.pravatar.cc/100?img=53" alt="Client">
+                  <div><div class="review-name">Nathalie P.</div><div class="review-meta">20 février 2026</div></div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>Très satisfaite de mon achat. J’aime particulièrement la finition et la facilité à l’intégrer dans une déco contemporaine.</p>
+                <span class="verified">Achat Vérifié ✓</span>
+              </article>
+              <article class="review-card">
+                <div class="review-top">
+                  <img src="https://i.pravatar.cc/100?img=60" alt="Client">
+                  <div><div class="review-name">Élodie T.</div><div class="review-meta">17 février 2026</div></div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>Le design est superbe et le rendu premium se voit immédiatement. J’ai commandé après avoir vu les avis et je comprends totalement la note.</p>
+                <span class="verified">Achat Vérifié ✓</span>
+              </article>
+            </div>
+
+            <div class="center" style="margin-top:22px">
+              <a href="https://trustpilot.customerthread.com/?country=FR&shop=LaMaisonDeLena&logo=&url=LaMaisonDeLena.com" target="_blank" rel="noopener" class="btn btn-secondary" style="max-width:320px;margin:0 auto">Voir tous les avis sur Trustpilot →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="faq-tabs-wrap fade">
+            <div>
+              <span class="eyebrow">FAQ #10</span>
+              <h2 class="title-md" style="margin-top:14px">FAQ</h2>
+              <div class="faq-tabs" data-tabs="homeFaq">
+                <button class="faq-tab active" data-tab="livraison">Livraison</button>
+                <button class="faq-tab" data-tab="retours">Retours & remboursements</button>
+                <button class="faq-tab" data-tab="boutique">Boutique</button>
+                <button class="faq-tab" data-tab="commande">Commande</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="faq-group active" data-group="livraison">
+                <div class="accordion active">
+                  <button class="accordion-btn">Quels sont les délais de livraison ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content" style="max-height:180px">
+                    <p>Nos commandes sont préparées rapidement et expédiées avec suivi. Les délais varient selon la référence choisie, mais la majorité des commandes arrivent sous quelques jours ouvrés.</p>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">La livraison est-elle offerte ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Oui, nous proposons une livraison rapide offerte sur la boutique afin de rendre l’expérience aussi simple que premium.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Puis-je suivre ma commande ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Un lien de suivi vous est communiqué dès l’expédition pour connaître à tout moment l’avancement de votre livraison.</p></div>
+                </div>
+              </div>
+
+              <div class="faq-group" data-group="retours">
+                <div class="accordion">
+                  <button class="accordion-btn">Puis-je retourner un article ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Oui, vous disposez d’un délai de 30 jours pour effectuer un retour si le produit ne correspond pas à vos attentes.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Comment demander un remboursement ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Il suffit de nous écrire via la page Contact avec votre numéro de commande. Notre équipe vous indiquera la procédure complète.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Les retours sont-ils simples ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Oui. Nous avons simplifié chaque étape pour garantir une expérience fluide, claire et rassurante.</p></div>
+                </div>
+              </div>
+
+              <div class="faq-group" data-group="boutique">
+                <div class="accordion">
+                  <button class="accordion-btn">Comment sélectionnez-vous vos produits ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Nous privilégions des pièces fortes, iconiques et faciles à intégrer dans des intérieurs contemporains, minimalistes ou chaleureux.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Les produits conviennent-ils à une décoration moderne ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Oui, notre sélection s’adapte particulièrement bien aux intérieurs élégants, épurés et aux ambiances premium.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Comment obtenir un conseil déco ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Notre équipe vous répond par email pour vous guider dans le choix des couleurs, des dimensions et de l’intégration dans votre pièce.</p></div>
+                </div>
+              </div>
+
+              <div class="faq-group" data-group="commande">
+                <div class="accordion">
+                  <button class="accordion-btn">Comment passer commande ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Choisissez votre modèle, votre couleur si disponible, puis cliquez sur le bouton d’ajout au panier pour finaliser votre achat.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Puis-je modifier ma commande après achat ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Si votre commande n’a pas encore été traitée, contactez-nous rapidement pour que nous puissions vous aider.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Comment vous contacter facilement ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Vous pouvez utiliser notre formulaire de contact ou nous écrire à contact@lamaisondelena.com.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:24px" class="tp-widget fade">
+            <a href="https://trustpilot.customerthread.com/?country=FR&shop=LaMaisonDeLena&logo=&url=LaMaisonDeLena.com" target="_blank" rel="noopener">
+              <div class="tp-mark">
+                <div class="tp-logo">★</div>
+                <div>
+                  <strong>Trustpilot — Excellent</strong><br>
+                  <span class="tp-stars">★★★★★</span> <span class="muted">4,8/5</span>
+                </div>
+              </div>
+              <span style="font-weight:800">Consulter les avis →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-lg">
+        <div class="container">
+          <div class="newsletter fade">
+            <span class="eyebrow" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);color:#fff">Newsletter</span>
+            <h2 class="title-md" style="color:#fff;margin-top:14px">Recevez nos nouveautés déco et nos offres privées</h2>
+            <p style="color:#d6cfc4;max-width:680px">Inscrivez-vous pour découvrir nos sélections exclusives, nos inspirations d’intérieur et nos lancements en avant-première.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault()">
+              <input type="email" placeholder="Votre adresse e-mail" aria-label="Votre adresse e-mail">
+              <button class="btn btn-primary" type="submit" style="max-width:280px">Je m’inscris</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section id="collection" class="page">
+      <div class="collection-hero">
+        <div class="container">
+          <span class="eyebrow">Notre collection</span>
+          <h1 class="title-md" style="margin-top:14px">Nos Produits</h1>
+          <p class="text-soft" style="max-width:720px">Des pièces de décoration design sélectionnées pour leur élégance, leur praticité et leur impact visuel. Chaque produit ci-dessous mène à sa page dédiée.</p>
+        </div>
+      </div>
+
+      <div class="page-shell">
+        <div class="container">
+          <div class="collection-tools">
+            <select id="filterType" aria-label="Filtrer par type">
+              <option value="all">Tous les produits</option>
+              <option value="2 portes">Grand format 2 portes</option>
+              <option value="3 portes">Grand format 3 portes</option>
+              <option value="colors">New Colors</option>
+            </select>
+            <select id="sortProducts" aria-label="Trier les produits">
+              <option value="default">Tri par défaut</option>
+              <option value="priceAsc">Prix croissant</option>
+              <option value="priceDesc">Prix décroissant</option>
+              <option value="discount">Meilleure remise</option>
+            </select>
+            <div class="pill" style="justify-self:start">Collection premium • Livraison offerte</div>
+          </div>
+          <div class="collection-nav-pills">
+            <a href="#collection-main" class="pill">Collection principale</a>
+            <a href="#collection-centres-de-table" class="pill">Centres de table</a>
+            <a href="#collection-earl-of-wood" class="pill">Earl of Wood</a>
+            <a href="#collection-lampes-de-table" class="pill">Lampes de table</a>
+          </div>
+
+          <div id="collection-main" class="collection-section">
+            <div id="collectionGrid" class="collection-grid"></div>
+          </div>
+
+          <div id="extraCollections"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="page">
+      <div class="page-shell">
+        <div class="container">
+          <div class="center" style="max-width:760px;margin:0 auto 26px">
+            <span class="eyebrow">FAQ complète</span>
+            <h1 class="title-md" style="margin-top:14px">Questions fréquentes</h1>
+            <p class="text-soft">Retrouvez ici toutes les réponses utiles sur la livraison, les retours, le fonctionnement de la boutique et votre commande.</p>
+          </div>
+
+          <div class="faq-tabs-wrap">
+            <div>
+              <div class="faq-tabs" data-tabs="faqPage">
+                <button class="faq-tab active" data-tab="livraison-faq">Livraison</button>
+                <button class="faq-tab" data-tab="retours-faq">Retours</button>
+                <button class="faq-tab" data-tab="commande-faq">Commande</button>
+                <button class="faq-tab" data-tab="boutique-faq">Boutique</button>
+                <button class="faq-tab" data-tab="technique-faq">Technique</button>
+              </div>
+            </div>
+            <div>
+              <div class="faq-group active" data-group="livraison-faq">
+                <div class="accordion active">
+                  <button class="accordion-btn">En combien de temps ma commande arrive-t-elle ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content" style="max-height:180px"><p>Nous traitons rapidement chaque commande. Le délai de livraison dépend du produit et du volume de commandes en cours, mais le suivi est systématiquement communiqué.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Livrez-vous partout en France ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Oui, nous proposons une livraison partout en France métropolitaine selon les conditions affichées lors de la commande.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Comment suivre l’expédition ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Un email de confirmation d’expédition avec lien de suivi vous est envoyé dès que le colis est pris en charge.</p></div>
+                </div>
+              </div>
+
+              <div class="faq-group" data-group="retours-faq">
+                <div class="accordion">
+                  <button class="accordion-btn">Quel est le délai de retour ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Vous disposez de 30 jours à compter de la réception pour demander un retour selon nos conditions.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Comment lancer une demande de remboursement ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Écrivez-nous avec votre numéro de commande. Nous vous enverrons la marche à suivre le plus rapidement possible.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Le produit doit-il être dans son emballage d’origine ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Nous recommandons de conserver l’emballage pour faciliter un retour dans les meilleures conditions.</p></div>
+                </div>
+              </div>
+
+              <div class="faq-group" data-group="commande-faq">
+                <div class="accordion">
+                  <button class="accordion-btn">Comment choisir la bonne variante ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Chaque page produit affiche clairement les coloris disponibles. Il vous suffit de sélectionner la pastille ou le bouton correspondant avant d’ajouter au panier.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Puis-je corriger mon adresse après l’achat ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Oui, contactez-nous dès que possible. Si la commande n’a pas encore été expédiée, nous ferons le nécessaire.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Recevrai-je une confirmation ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Oui, une confirmation de commande puis d’expédition vous est transmise automatiquement.</p></div>
+                </div>
+              </div>
+
+              <div class="faq-group" data-group="boutique-faq">
+                <div class="accordion">
+                  <button class="accordion-btn">Pourquoi choisir LaMaisonDeLena ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Notre boutique privilégie les pièces à forte valeur décorative, avec un rendu premium, un style intemporel et une sélection resserrée.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Vos produits conviennent-ils à tous les styles d’intérieur ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Oui, nos collections s’intègrent aussi bien dans des ambiances modernes, minimalistes, chaleureuses ou plus architecturales.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Avez-vous un service de conseil ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Oui, nous pouvons vous orienter selon votre besoin, votre espace et votre style décoratif.</p></div>
+                </div>
+              </div>
+
+              <div class="faq-group" data-group="technique-faq">
+                <div class="accordion">
+                  <button class="accordion-btn">Le site est-il sécurisé ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Oui, les transactions sont protégées et les informations partagées dans le cadre de la commande sont traitées de façon sécurisée.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Puis-je vous écrire si j’ai un problème technique ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Bien sûr. Utilisez la page contact et notre équipe vous répondra dans les meilleurs délais.</p></div>
+                </div>
+                <div class="accordion">
+                  <button class="accordion-btn">Vos pages produits sont-elles mises à jour en temps réel ?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1b1a" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="accordion-content"><p>Nous mettons régulièrement à jour les informations affichées afin de vous offrir une expérience claire et cohérente.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="separator"></div>
+
+          <div class="contact-card">
+            <h2 class="title-sm">Encore une question ?</h2>
+            <p class="text-soft">Notre équipe est disponible pour vous conseiller avant ou après votre commande.</p>
+            <a href="#contact" class="btn btn-primary route-link" style="max-width:280px">Contacter la boutique</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="page">
+      <div class="page-shell">
+        <div class="container">
+          <div class="center" style="max-width:760px;margin:0 auto 28px">
+            <span class="eyebrow">Contact & informations</span>
+            <h1 class="title-md" style="margin-top:14px">Nous contacter</h1>
+            <p class="text-soft">Une question sur une commande, une variante ou l’intégration d’un produit dans votre intérieur ? Écrivez-nous.</p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <h2 class="title-sm">Formulaire de contact</h2>
+              <form class="contact-form" onsubmit="event.preventDefault()" style="display:grid;gap:12px">
+                <input type="text" placeholder="Votre nom" aria-label="Votre nom">
+                <input type="email" placeholder="Votre e-mail" aria-label="Votre e-mail">
+                <textarea placeholder="Votre message" aria-label="Votre message"></textarea>
+                <button class="btn btn-primary" type="submit">Envoyer votre message</button>
+              </form>
+            </div>
+
+            <div class="legal-card">
+              <h2 class="title-sm">Infos légales</h2>
+              <div style="display:grid;gap:14px;color:#5e5851;line-height:1.8">
+                <div><strong style="color:#1c1b1a">Boutique :</strong> LaMaisonDeLena</div>
+                <div><strong style="color:#1c1b1a">Site :</strong> LaMaisonDeLena.com</div>
+                <div><strong style="color:#1c1b1a">Adresse :</strong> 12 Rue du Commerce, 75015 Paris, France</div>
+                <div><strong style="color:#1c1b1a">Email :</strong> contact@lamaisondelena.com</div>
+                <div><strong style="color:#1c1b1a">Horaires :</strong> Lundi au vendredi — 9h00 à 18h00</div>
+                <div><strong style="color:#1c1b1a">SAS | SIRET :</strong> 123 456 789 00012</div>
+                <div><strong style="color:#1c1b1a">TVA :</strong> FR12345678901</div>
+              </div>
+
+              <div class="separator"></div>
+
+              <a href="https://trustpilot.customerthread.com/?country=FR&shop=LaMaisonDeLena&logo=&url=LaMaisonDeLena.com" target="_blank" rel="noopener" class="tp-inline">
+                <span class="tp-stars">★★★★★</span>
+                <strong>4,8/5 • Excellent sur Trustpilot</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="product-componibili-2" class="page"></section>
+    <section id="product-componibili-3" class="page"></section>
+    <section id="product-componibili-colors" class="page"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">LaMaisonDeLena<small style="color:#c9c2b8">Décoration premium</small></div>
+          <p>Une boutique pensée pour les amateurs d’intérieurs élégants, épurés et intemporels. Des pièces fortes, une expérience claire et un service attentif.</p>
+
+          <a href="https://trustpilot.customerthread.com/?country=FR&shop=LaMaisonDeLena&logo=&url=LaMaisonDeLena.com" target="_blank" rel="noopener" class="tp-inline" style="margin-top:10px;background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);color:#fff">
+            <span class="tp-stars">★★★★★</span>
+            <strong>Trustpilot • 4,8/5</strong>
+          </a>
+
+          <div class="socials">
+            <a href="#" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1"/></svg>
+            </a>
+            <a href="#" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3a9 9 0 0 0-3 17.5l1-3.7c-.2-.5-.4-1.4-.4-2.2 0-2.1 1.2-3.6 2.7-3.6 1.3 0 1.9 1 1.9 2.1 0 1.3-.8 3.2-1.2 4.9-.3 1.4.7 2.6 2.1 2.6 2.5 0 4.5-2.6 4.5-6.3 0-3.3-2.3-5.6-5.7-5.6-3.9 0-6.2 2.9-6.2 5.9 0 1.2.5 2.5 1 3.1.1.1.1.3.1.5l-.4 1.6c-.1.3-.2.4-.5.2-1.7-.8-2.8-3.2-2.8-5.2C4.3 8.1 7.4 5 12.2 5c4.7 0 8.4 3.4 8.4 8 0 4.8-3 8.6-7.2 8.6-1.4 0-2.8-.7-3.2-1.6l-.9 3.4"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+
+          <div class="payments">
+            <div class="pay">VISA</div>
+            <div class="pay">MC</div>
+            <div class="pay">PayPal</div>
+            <div class="pay">Apple Pay</div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="desktop-only">Boutique</h4>
+          <details open>
+            <summary>Boutique</summary>
+            <div class="footer-links">
+              <a href="#home" class="route-link">Accueil</a>
+              <a href="#collection" class="route-link">Collection</a>
+              <a href="#faq" class="route-link">FAQ</a>
+              <a href="#contact" class="route-link">Contact</a>
+            </div>
+          </details>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="desktop-only">Collections</h4>
+          <details open>
+            <summary>Collections</summary>
+            <div class="footer-links">
+              <a href="#collection-main" class="route-link">Collection principale</a>
+              <a href="#collection-centres-de-table" class="route-link">Centres de table</a>
+              <a href="#collection-earl-of-wood" class="route-link">Earl of Wood</a>
+              <a href="#collection-lampes-de-table" class="route-link">Lampes de table</a>
+            </div>
+          </details>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="desktop-only">Légal</h4>
+          <details open>
+            <summary>Légal</summary>
+            <div class="footer-links">
+              <a href="#contact" class="route-link">Mentions légales</a>
+              <a href="#faq" class="route-link">Retours & remboursements</a>
+              <a href="#contact" class="route-link">Politique de contact</a>
+            </div>
+          </details>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="desktop-only">Newsletter</h4>
+          <details open>
+            <summary>Newsletter</summary>
+            <div class="footer-links">
+              <form onsubmit="event.preventDefault()" style="display:grid;gap:10px">
+                <input type="email" placeholder="Votre e-mail" aria-label="Votre e-mail" style="min-height:48px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#fff;padding:0 14px">
+                <button type="submit" class="btn btn-primary" style="min-height:48px">S’inscrire</button>
+              </form>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container" style="padding:0 0 18px">
+      <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:18px">
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <a href="#collection-main" class="route-link" style="padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#fff">Collection principale</a>
+          <a href="#collection-centres-de-table" class="route-link" style="padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#fff">Centres de table</a>
+          <a href="#collection-earl-of-wood" class="route-link" style="padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#fff">Earl of Wood</a>
+          <a href="#collection-lampes-de-table" class="route-link" style="padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#fff">Lampes de table</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div style="display:grid;gap:10px">
+        <div>SAS | SIRET: 123 456 789 00012 | TVA FR12345678901 | 12 Rue du Commerce, 75015 Paris, France</div>
+        <div>© 2026 LaMaisonDeLena. Tous droits réservés.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const trustpilotUrl = "https://trustpilot.customerthread.com/?country=FR&shop=LaMaisonDeLena&logo=&url=LaMaisonDeLena.com";
+
+    const products = [
+      {
+        id: "product-componibili-2",
+        type: "2 portes",
+        name: "Componibili Grand Format — 2 Portes",
+        short: "Rangement iconique pour les intérieurs contemporains",
+        oldPrice: 211,
+        price: 89.99,
+        discount: 57,
+        cover: "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04922BO.jpg?t=big",
+        description: `
+          <div class="product-desc">
+            <p><strong>Le Componibili Grand Format 2 Portes</strong> est pensé pour celles et ceux qui recherchent un objet décoratif aussi beau que pratique. Sa silhouette arrondie apporte une sensation de douceur visuelle, tandis que son volume généreux permet de structurer un espace sans l’alourdir. Placé en bout de canapé, dans une entrée, à côté d’un lit ou même dans un coin lecture, il devient instantanément un point d’équilibre dans la pièce.</p>
+            <p>Au-delà de son esthétique, ce modèle séduit par sa grande polyvalence. Il peut accueillir vos objets du quotidien, cacher discrètement ce que vous ne souhaitez pas laisser visible et valoriser l’ensemble de votre décoration. <strong>Son design intemporel</strong> fonctionne aussi bien dans un intérieur minimaliste que dans une ambiance plus chaleureuse, texturée et contemporaine.</p>
+            <p>Ce que nos clients apprécient le plus, c’est la sensation de finition premium qu’il apporte : lignes nettes, présence sculpturale, rangement discret et effet visuel immédiat. <strong>Facile à intégrer, simple à vivre, fort en style</strong>, il représente la pièce idéale pour donner du caractère à un intérieur sans surcharge visuelle. C’est un choix sûr si vous aimez les objets utiles qui ont une vraie signature décorative.</p>
+          </div>
+        `,
+        features: [
+          {title:"Design sculptural", text:"Une silhouette arrondie qui attire le regard et structure la pièce.", icon:"spark"},
+          {title:"Rangement discret", text:"Idéal pour garder l’essentiel à portée de main sans désordre visuel.", icon:"box"},
+          {title:"Format polyvalent", text:"Parfait dans une chambre, un salon, une entrée ou un bureau.", icon:"grid"},
+          {title:"Impact premium", text:"Une présence visuelle forte qui rehausse immédiatement la décoration.", icon:"star"}
+        ],
+        specs: [
+          ["Type", "Meuble de rangement design"],
+          ["Configuration", "2 portes / 2 compartiments"],
+          ["Style", "Minimaliste contemporain"],
+          ["Usage", "Salon, chambre, entrée, bureau"],
+          ["Finition", "Aspect premium lisse"],
+          ["Entretien", "Nettoyage simple avec chiffon doux"],
+          ["Intégration déco", "Compatible intérieurs modernes et chaleureux"]
+        ],
+        parcel: [
+          "1x Componibili Grand Format — 2 Portes",
+          "1x Emballage premium renforcé",
+          "1x Guide de mise en place et d’entretien",
+          "1x Confirmation de commande et suivi"
+        ],
+        reviews: [
+          {img:14,name:"Pauline D.",date:"11 mars 2026",text:"La pièce est superbe en vrai. Le rendu est très premium et j’ai enfin un rangement qui ne casse pas la déco.", rating:"★★★★★"},
+          {img:28,name:"Céline B.",date:"5 mars 2026",text:"Très beau volume, finition élégante et silhouette vraiment chic. Je l’utilise en table d’appoint dans mon salon.", rating:"★★★★★"},
+          {img:31,name:"Inès M.",date:"28 février 2026",text:"Commande reçue rapidement, très bien emballée. Le meuble change complètement l’ambiance de ma chambre.", rating:"★★★★★"},
+          {img:47,name:"Marion V.",date:"19 février 2026",text:"J’adore le côté pratique sans perdre l’aspect design. C’est exactement ce que je voulais pour mon entrée.", rating:"★★★★★"}
+        ],
+        variants: [
+          {label:"Noir", color:"#1f1f1f", img:"https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04922BO.jpg?t=big", link:"https://tkfs.trackforces.com/aff_c?offer_id=106310&aff_id=1315&aff_sub5=902121312637199&source=Componibili%20new%20big___https%3A%2F%2Fd3trhmpc56lg1h.cloudfront.net%2FIMG%2FKARTELL%2FPRODUCTS%2FHD%2FKAR04922BO.jpg%3Ft%3Dbig"},
+          {label:"Blanc", color:"#f3f0e8", img:"https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04922TO.jpg?t=big", link:"https://tkfs.trackforces.com/aff_c?offer_id=106310&aff_id=1315&aff_sub5=902121312637199&source=Componibili%20new%20big___https%3A%2F%2Fd3trhmpc56lg1h.cloudfront.net%2FIMG%2FKARTELL%2FPRODUCTS%2FHD%2FKAR04922TO.jpg%3Ft%3Dbig"},
+          {label:"Ambre", color:"#c67846", img:"https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04922AM.jpg?t=big", link:"https://tkfs.trackforces.com/aff_c?offer_id=106310&aff_id=1315&aff_sub5=902121312637199&source=Componibili%20new%20big___https%3A%2F%2Fd3trhmpc56lg1h.cloudfront.net%2FIMG%2FKARTELL%2FPRODUCTS%2FHD%2FKAR04922AM.jpg%3Ft%3Dbig"},
+          {label:"Sable", color:"#d7c8a1", img:"https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR0492215.jpg?t=big", link:"https://tkfs.trackforces.com/aff_c?offer_id=106310&aff_id=1315&aff_sub5=902121312637199&source=Componibili%20new%20big___https%3A%2F%2Fd3trhmpc56lg1h.cloudfront.net%2FIMG%2FKARTELL%2FPRODUCTS%2FHD%2FKAR0492215.jpg%3Ft%3Dbig"},
+          {label:"Taupe", color:"#857462", img:"https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR0492203.jpg?t=big", link:"https://tkfs.trackforces.com/aff_c?offer_id=106310&aff_id=1315&aff_sub5=902121312637199&source=Componibili%20new%20big___https%3A%2F%2Fd3trhmpc56lg1h.cloudfront.net%2FIMG%2FKARTELL%2FPRODUCTS%2FHD%2FKAR0492203.jpg%3Ft%3Dbig"},
+          {label:"Ocre", color:"#bea35e", img:"https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR0492218.jpg?t=big", link:"https://tkfs.trackforces.com/aff_c?offer_id=106310&aff_id=1315&aff_sub5=902121312637199&source=Componibili%20new%20big___https%3A%2F%2Fd3trhmpc56lg1h.cloudfront.net%2FIMG%2FKARTELL%2FPRODUCTS%2FHD%2FKAR0492218.jpg%3Ft%3Dbig"}
+        ]
+      },
+      {
+        id: "product-componibili-3",
+        type: "3 portes",
+        name: "Componibili — Sélection liée au Grand Format 3 Portes",
+        short: "Toutes les déclinaisons liées au Grand Format 3 Portes, classiques et métalliques",
+        oldPrice: 270,
+        price: 89.99,
+        discount: 67,
+        cover: "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04923TO.jpg?t=big",
+        description: `
+          <div class="product-desc">
+            <p><strong>Le Componibili Grand Format 3 Portes</strong> a été imaginé pour celles et ceux qui aiment les objets décoratifs à la fois utiles et très bien dessinés. Grâce à sa structure plus verticale, il offre davantage de capacité de rangement tout en gardant une empreinte visuelle maîtrisée. C’est le compagnon parfait pour une chambre, un dressing, une bibliothèque ou un espace bureau raffiné.</p>
+            <p>Sa force réside dans l’équilibre entre fonctionnalité et esthétique. Les ouvertures successives créent un rythme graphique subtil, tandis que la forme cylindrique adoucit l’ensemble et lui donne une allure architecturale. <strong>Il permet d’optimiser l’espace sans jamais donner une impression encombrée</strong>, ce qui le rend particulièrement apprécié dans les intérieurs bien pensés où chaque pièce compte.</p>
+            <p>Ce modèle plaît aux clients qui souhaitent un rangement plus généreux sans renoncer à une vraie signature déco. Il s’associe très facilement à des matières naturelles, des textiles texturés, des lignes contemporaines ou un univers plus design. <strong>Pratique, élégant et visuellement fort</strong>, c’est un choix premium pour installer une ambiance soignée, structurée et durable dans la maison.</p>
+          </div>
+        `,
+        features: [
+          {title:"Rangement optimisé", text:"Trois compartiments pour mieux organiser l’espace au quotidien.", icon:"box"},
+          {title:"Silhouette architecturale", text:"Une verticalité élégante idéale pour les pièces modernes.", icon:"grid"},
+          {title:"Usage multi-pièces", text:"Convient à une chambre, un salon, une entrée ou un coin bureau.", icon:"spark"},
+          {title:"Style intemporel", text:"Une pièce forte qui traverse les tendances sans se démoder.", icon:"star"}
+        ],
+        specs: [
+          ["Type", "Meuble de rangement décoratif"],
+          ["Configuration", "3 portes / 3 compartiments"],
+          ["Style", "Design iconique et épuré"],
+          ["Usage", "Chambre, salon, entrée, bureau"],
+          ["Format", "Vertical et compact visuellement"],
+          ["Entretien", "Chiffon doux recommandé"],
+          ["Ambiance idéale", "Intérieurs modernes, minimalistes, premium"]
+        ],
+        parcel: [
+          "1x Componibili Grand Format — 3 Portes",
+          "1x Protection d’emballage renforcée",
+          "1x Notice de présentation et d’entretien",
+          "1x Informations de suivi et d’assistance"
+        ],
+        reviews: [
+          {img:9,name:"Laura F.",date:"14 mars 2026",text:"Le modèle 3 portes est parfait pour mon bureau. J’ai gagné du rangement tout en améliorant vraiment le style de la pièce.",rating:"★★★★★"},
+          {img:17,name:"Sandrine C.",date:"8 mars 2026",text:"Très belle présence, sans être visuellement lourd. C’est chic, pratique et très facile à associer avec ma déco beige et bois.",rating:"★★★★★"},
+          {img:41,name:"Julie P.",date:"1 mars 2026",text:"Je l’ai installé dans la chambre d’amis et tout le monde me demande où je l’ai trouvé. Très belle pièce.",rating:"★★★★★"},
+          {img:57,name:"Anaïs T.",date:"21 février 2026",text:"Belle capacité de rangement, proportions réussies, et le prix promo est très attractif pour ce niveau de style.",rating:"★★★★★"}
+        ],
+        variants: [{'label': 'Blanc', 'color': '#f3f0e8', 'img': 'https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR0496703.jpg?t=big', 'link': 'https://www.kartell.com/fr/fr/ktfr/shop/product/componibili-classic/kar0496703'}, {'label': 'Noir', 'color': '#1f1f1f', 'img': 'https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR0496709.jpg?t=big', 'link': 'https://www.kartell.com/fr/fr/ktfr/shop/product/componibili-classic/kar0496709'}, {'label': 'Rouge', 'color': '#b74848', 'img': 'https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR0496710.jpg?t=big', 'link': 'https://www.kartell.com/fr/fr/ktfr/shop/product/componibili-classic/kar0496710'}, {'label': 'Bleu', 'color': '#5678a8', 'img': 'https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR0496715.jpg?t=big', 'link': 'https://www.kartell.com/fr/fr/ktfr/shop/product/componibili-classic/kar0496715'}, {'label': 'Vert', 'color': '#7e9d61', 'img': 'https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR0496718.jpg?t=big', 'link': 'https://www.kartell.com/fr/fr/ktfr/shop/product/componibili-classic/kar0496718'}, {'label': 'Violet', 'color': '#7a5f8d', 'img': 'https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR0496720.jpg?t=big', 'link': 'https://www.kartell.com/fr/fr/ktfr/shop/product/componibili-classic/kar0496720'}, {'label': 'Argent', 'color': '#b6bcc6', 'img': 'https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04967SI.jpg?t=big', 'link': 'https://www.kartell.com/fr/fr/ktfr/shop/product/componibili-classic/kar04967si'}, {'label': 'Or Métallisé • Stock limité', 'color': '#c9a54b', 'img': 'https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR05967GG.jpg?t=big', 'link': 'https://www.kartell.com/fr/fr/ktfr/shop/product/componibili-metal/kar05967gg'}, {'label': 'Cuivre Métallisé • Disponible', 'color': '#b86d50', 'img': 'https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR05967RR.jpg?t=big', 'link': 'https://www.kartell.com/fr/fr/ktfr/shop/product/componibili-metal/kar05967rr'}, {'label': 'Chromé • Disponible', 'color': '#bfc4cc', 'img': 'https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR05967XX.jpg?t=big', 'link': 'https://www.kartell.com/fr/fr/ktfr/shop/product/componibili-metal/kar05967xx'}]
+      },
+      {
+        id: "product-componibili-colors",
+        type: "colors",
+        name: "Componibili New Colors",
+        short: "Une version colorée pensée pour apporter du relief à votre décoration",
+        oldPrice: 122,
+        price: 89.99,
+        discount: 26,
+        cover: "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04966AM.jpg?t=big",
+        description: `
+          <div class="product-desc">
+            <p><strong>Componibili New Colors</strong> est la réponse parfaite pour celles et ceux qui veulent introduire une note de caractère dans leur intérieur sans rompre l’harmonie générale. Grâce à ses teintes soigneusement sélectionnées, cette version apporte de la personnalité à l’espace tout en conservant l’élégance minimaliste qui fait le succès de la collection.</p>
+            <p>Dans un salon neutre, une chambre douce ou une entrée contemporaine, il agit comme un accent visuel maîtrisé. Vous profitez d’un rangement utile au quotidien tout en ajoutant une touche décorative plus expressive. <strong>Le jeu de couleur devient ici un vrai levier de style</strong> : il attire le regard, réchauffe l’ambiance et permet de composer un univers plus vivant, plus sophistiqué, plus personnel.</p>
+            <p>C’est un produit idéal pour celles et ceux qui aiment les intérieurs premium mais pas figés. On l’apprécie pour sa flexibilité, son format pratique et sa capacité à créer du contraste avec subtilité. <strong>Élégant, décoratif et facile à adopter</strong>, il s’intègre aussi bien dans une décoration moderne que dans un univers plus créatif et chaleureux.</p>
+          </div>
+        `,
+        features: [
+          {title:"Palette décorative", text:"Des coloris qui donnent immédiatement du relief à l’intérieur.", icon:"spark"},
+          {title:"Format facile à placer", text:"Idéal en table d’appoint ou rangement d’appoint design.", icon:"grid"},
+          {title:"Style contemporain", text:"Un look minimaliste rehaussé par une vraie présence couleur.", icon:"star"},
+          {title:"Ambiance personnalisée", text:"Parfait pour signer une pièce avec un accent visuel maîtrisé.", icon:"box"}
+        ],
+        specs: [
+          ["Type", "Rangement déco coloré"],
+          ["Collection", "New Colors"],
+          ["Style", "Design contemporain coloré"],
+          ["Usage", "Salon, chambre, entrée"],
+          ["Particularité", "Accent visuel décoratif"],
+          ["Entretien", "Nettoyage simple"],
+          ["Effet recherché", "Relief et personnalité dans la décoration"]
+        ],
+        parcel: [
+          "1x Componibili New Colors",
+          "1x Emballage premium de protection",
+          "1x Carte d’entretien",
+          "1x Confirmation et suivi de commande"
+        ],
+        reviews: [
+          {img:11,name:"Mélanie R.",date:"10 mars 2026",text:"La couleur donne tout de suite du style à mon salon. C’est exactement l’accent déco que je cherchais.",rating:"★★★★★"},
+          {img:24,name:"Audrey K.",date:"4 mars 2026",text:"Très beau rendu, plus chic que ce que j’imaginais. Le coloris apporte de la chaleur sans être trop présent.",rating:"★★★★★"},
+          {img:38,name:"Claire J.",date:"27 février 2026",text:"Le format est pratique et la finition vraiment jolie. J’ai choisi ce modèle pour casser un intérieur trop neutre.",rating:"★★★★★"},
+          {img:52,name:"Lucie N.",date:"18 février 2026",text:"Produit très décoratif, simple à intégrer et très conforme aux photos. Super contente de l’achat.",rating:"★★★★★"}
+        ],
+        variants: [
+          {label:"Ambre", color:"#c67846", img:"https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04966AM.jpg?t=big", link:"https://tkfs.trackforces.com/aff_c?offer_id=106310&aff_id=1315&aff_sub5=902121312637199&source=Componibili%20new%20colors___https%3A%2F%2Fd3trhmpc56lg1h.cloudfront.net%2FIMG%2FKARTELL%2FPRODUCTS%2FHD%2FKAR04966AM.jpg%3Ft%3Dbig"},
+          {label:"Azur", color:"#6d8fb5", img:"https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04966AZ.jpg?t=big", link:"https://tkfs.trackforces.com/aff_c?offer_id=106310&aff_id=1315&aff_sub5=902121312637199&source=Componibili%20new%20colors___https%3A%2F%2Fd3trhmpc56lg1h.cloudfront.net%2FIMG%2FKARTELL%2FPRODUCTS%2FHD%2FKAR04966AZ.jpg%3Ft%3Dbig"},
+          {label:"Noir", color:"#1f1f1f", img:"https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04966BO.jpg?t=big", link:"https://tkfs.trackforces.com/aff_c?offer_id=106310&aff_id=1315&aff_sub5=902121312637199&source=Componibili%20new%20colors___https%3A%2F%2Fd3trhmpc56lg1h.cloudfront.net%2FIMG%2FKARTELL%2FPRODUCTS%2FHD%2FKAR04966BO.jpg%3Ft%3Dbig"}
+        ]
+      }
+    ];
+
+
+    const extraCollections = [
+  {
+    "id": "collection-centres-de-table",
+    "title": "Collection Centres de Table",
+    "subtitle": "Des pièces décoratives pensées pour sublimer une table, une console ou un buffet.",
+    "items": [
+      {
+        "title": "Jellies family (4 assiettes à dessert)",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01494B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jellies-family-4-assiettes-a-dessert/kar01494b4",
+        "price": 476.0,
+        "description": "Une sélection décorative élégante pour apporter du relief et une finition premium à votre intérieur."
+      },
+      {
+        "title": "Jellies family (4 coupelles)",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01499B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jellies-family-4-coupelles/kar01499b4",
+        "price": 472.0,
+        "description": "Une sélection décorative élégante pour apporter du relief et une finition premium à votre intérieur."
+      },
+      {
+        "title": "Jellies family (4 tasse à café)",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01582B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jellies-family-4-tasse-a-cafe/kar01582b4",
+        "price": 480.0,
+        "description": "Une sélection décorative élégante pour apporter du relief et une finition premium à votre intérieur."
+      },
+      {
+        "title": "Jellies family - bar (4 verres)",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01491B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jellies-family-bar-4-verres/kar01491b4",
+        "price": 480.0,
+        "description": "Une sélection décorative élégante pour apporter du relief et une finition premium à votre intérieur."
+      },
+      {
+        "title": "Jellies family - eau (4 verres)",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01492B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jellies-family-eau-4-verres/kar01492b4",
+        "price": 452.0,
+        "description": "Une sélection décorative élégante pour apporter du relief et une finition premium à votre intérieur."
+      },
+      {
+        "title": "Jellies family - flute (4 verres)",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01581B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jellies-family-flute-4-verres/kar01581b4",
+        "price": 472.0,
+        "description": "Une sélection décorative élégante pour apporter du relief et une finition premium à votre intérieur."
+      },
+      {
+        "title": "Jellies family - vin (4 verres)",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01493B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jellies-family-vin-4-verres/kar01493b4",
+        "price": 452.0,
+        "description": "Une sélection décorative élégante pour apporter du relief et une finition premium à votre intérieur."
+      },
+      {
+        "title": "Jellies family",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01490B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jellies-family/kar01490b4",
+        "price": 479.0,
+        "description": "Une sélection décorative élégante pour apporter du relief et une finition premium à votre intérieur."
+      },
+      {
+        "title": "Jellies family",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01498B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jellies-family/kar01498b4",
+        "price": 4101.0,
+        "description": "Une sélection décorative élégante pour apporter du relief et une finition premium à votre intérieur."
+      },
+      {
+        "title": "Jellies family",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01583B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jellies-family/kar01583b4",
+        "price": 438.0,
+        "description": "Une sélection décorative élégante pour apporter du relief et une finition premium à votre intérieur."
+      },
+      {
+        "title": "Jelly",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01226B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jelly/1013-5051",
+        "price": 4130.0,
+        "description": "Une sélection décorative élégante pour apporter du relief et une finition premium à votre intérieur."
+      },
+      {
+        "title": "Jelly",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01226B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jelly/1013-5090",
+        "price": 4130.0,
+        "description": "Une sélection décorative élégante pour apporter du relief et une finition premium à votre intérieur."
+      }
+    ]
+  },
+  {
+    "id": "collection-earl-of-wood",
+    "title": "Collection Earl of Wood",
+    "subtitle": "Une collection design au caractère affirmé, pensée pour les intérieurs raffinés.",
+    "items": [
+      {
+        "title": "Earl of wood",
+        "variant": "NOIR",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04927NN.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/earl-of-wood/kar04927nn",
+        "price": 1137.0,
+        "description": "EARL OF WOOD est le nouveau bureau au design essentiel. Son plateau multifonctionnel en bois cintré répond aux besoins des mondes Office et Habitat. Les formes du bureau sont incurvées au niveau des bords inférieur et supérieur pour vous offrir une libert Identifiant du produit: 04927NN Loading."
+      }
+    ]
+  },
+  {
+    "id": "collection-lampes-de-table",
+    "title": "Collection Lampes de Table",
+    "subtitle": "Des luminaires sculpturaux pour créer une ambiance chaleureuse et sophistiquée.",
+    "items": [
+      {
+        "title": "Angelo stone table",
+        "variant": "CHAMPAGNE",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR09405BL.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/angelo-stone-table/272132-9009",
+        "price": 1039.0,
+        "description": "Une sélection de lampes de table premium pour structurer la lumière et valoriser la décoration."
+      },
+      {
+        "title": "Angelo stone table",
+        "variant": "CHAMPAGNE",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR09405BL.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/angelo-stone-table/272132-9011",
+        "price": 1039.0,
+        "description": "Une sélection de lampes de table premium pour structurer la lumière et valoriser la décoration."
+      },
+      {
+        "title": "Angelo stone table",
+        "variant": "CHAMPAGNE",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR09405BL.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/angelo-stone-table/272132-9012",
+        "price": 1039.0,
+        "description": "Une sélection de lampes de table premium pour structurer la lumière et valoriser la décoration."
+      },
+      {
+        "title": "Angelo stone table",
+        "variant": "CHAMPAGNE",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR09405BL.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/angelo-stone-table/kar09405bl",
+        "price": 1039.0,
+        "description": "Une sélection de lampes de table premium pour structurer la lumière et valoriser la décoration."
+      },
+      {
+        "title": "Angelo stone table",
+        "variant": "CUIVRE",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR09405RR.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/angelo-stone-table/kar09405rr",
+        "price": 1039.0,
+        "description": "Une sélection de lampes de table premium pour structurer la lumière et valoriser la décoration."
+      },
+      {
+        "title": "Angelo stone table",
+        "variant": "TITANE",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR09405TT.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/angelo-stone-table/kar09405tt",
+        "price": 1039.0,
+        "description": "Une sélection de lampes de table premium pour structurer la lumière et valoriser la décoration."
+      },
+      {
+        "title": "Angelo stone table",
+        "variant": "CHAMPAGNE",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR09405BL.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/angelo-stone-tavolo/kar09405bl",
+        "price": 1039.0,
+        "description": "Une sélection de lampes de table premium pour structurer la lumière et valoriser la décoration."
+      },
+      {
+        "title": "Battery metal",
+        "variant": "DORÉ",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR09145GG.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/battery-metal/kar09145gg",
+        "price": 243.0,
+        "description": "Une sélection de lampes de table premium pour structurer la lumière et valoriser la décoration."
+      },
+      {
+        "title": "Bourgie metal gold",
+        "variant": "DORÉ",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR0907400.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/bourgie-metal-gold/kar0907400",
+        "price": 907400729.0,
+        "description": "Une sélection de lampes de table premium pour structurer la lumière et valoriser la décoration."
+      },
+      {
+        "title": "Bourgie white and gold",
+        "variant": "BLANC/DORÉ",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KARG907600.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/bourgie-white-and-gold/karg907600",
+        "price": 907600537.0,
+        "description": "Une sélection de lampes de table premium pour structurer la lumière et valoriser la décoration."
+      },
+      {
+        "title": "Camomille metal",
+        "variant": "CHAMPAGNE",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR09580GG.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/camomille-metal/kar09580gg",
+        "price": 262.0,
+        "description": "Une sélection de lampes de table premium pour structurer la lumière et valoriser la décoration."
+      },
+      {
+        "title": "Cindy",
+        "variant": "OR FONCÉ",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KARG9100M2.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/cindy/karg9100m2",
+        "price": 2299.0,
+        "description": "Une sélection de lampes de table premium pour structurer la lumière et valoriser la décoration."
+      }
+    ]
+  }
+];
+
+    function renderExternalCard(item){
+      const hasDiscount = item.oldPrice && item.oldPrice > item.price;
+      const discount = hasDiscount ? Math.max(1, Math.round((1 - item.price / item.oldPrice) * 100)) : 0;
+      const tag = item.variant ? item.variant : (item.stock ? item.stock : "Disponible");
+      const oldPriceHtml = hasDiscount ? `<span class="price-old">${formatPrice(item.oldPrice)}</span>` : '';
+      const badgeHtml = hasDiscount ? `<span class="sale-badge">-${discount}%</span>` : '';
+      return `
+        <a href="${item.url}" class="product-card" target="_blank" rel="noopener">
+          <div class="product-media">
+            ${badgeHtml}
+            <img src="${item.image}" alt="${item.title}">
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">${item.title}</h3>
+            <span class="ext-card-tag">${tag}</span>
+            <div class="price-row" style="margin-top:12px">
+              ${oldPriceHtml}
+              <span class="price-now">${formatPrice(item.price)}</span>
+            </div>
+            <p class="ext-desc">${item.description}</p>
+          </div>
+        </a>`;
+    }
+
+    function renderExtraCollections(){
+      const wrap = document.getElementById('extraCollections');
+      if(!wrap) return;
+      wrap.innerHTML = extraCollections.map(col => `
+        <section id="${col.id}" class="collection-section">
+          <div class="collection-section-head">
+            <div>
+              <span class="eyebrow">${col.title}</span>
+              <h2 class="title-sm" style="margin-top:12px">${col.title}</h2>
+              <p class="text-soft" style="max-width:760px">${col.subtitle}</p>
+            </div>
+          </div>
+          <div class="collection-section-grid">
+            ${col.items.map(renderExternalCard).join('')}
+          </div>
+        </section>
+      `).join('');
+    }
+
+    const productDiscovery = {
+  "centres": {
+    "title": "Centres de table",
+    "items": [
+      {
+        "title": "Jellies family (4 assiettes à dessert)",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01494B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jellies-family-4-assiettes-a-dessert/kar01494b4",
+        "price": 476.0,
+        "description": "Une pièce décorative pensée pour habiller une table avec élégance."
+      },
+      {
+        "title": "Jellies family (4 coupelles)",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01499B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jellies-family-4-coupelles/kar01499b4",
+        "price": 472.0,
+        "description": "Une pièce décorative pensée pour habiller une table avec élégance."
+      },
+      {
+        "title": "Jellies family (4 tasse à café)",
+        "variant": "CRISTAL",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR01582B4.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/jellies-family-4-tasse-a-cafe/kar01582b4",
+        "price": 480.0,
+        "description": "Une pièce décorative pensée pour habiller une table avec élégance."
+      }
+    ]
+  },
+  "earl": {
+    "title": "Earl of Wood",
+    "items": [
+      {
+        "title": "Earl of wood",
+        "variant": "NOIR",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR04927NN.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/earl-of-wood/kar04927nn",
+        "price": 1137.0,
+        "description": "EARL OF WOOD est le nouveau bureau au design essentiel. Son plateau multifonctionnel en bois cintré répond aux besoins des mondes Office et Habitat. Les formes du bureau sont incurvées au niveau des bords inférieur et supérieur pour vous offrir une libert Identifiant du produit: 04927NN Loading."
+      }
+    ]
+  },
+  "lampes": {
+    "title": "Lampes de table",
+    "items": [
+      {
+        "title": "Angelo stone table",
+        "variant": "CHAMPAGNE",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR09405BL.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/angelo-stone-table/272132-9009",
+        "price": 1039.0,
+        "description": "Un luminaire premium pour créer une ambiance chaleureuse et sophistiquée."
+      },
+      {
+        "title": "Angelo stone table",
+        "variant": "CHAMPAGNE",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR09405BL.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/angelo-stone-table/272132-9011",
+        "price": 1039.0,
+        "description": "Un luminaire premium pour créer une ambiance chaleureuse et sophistiquée."
+      },
+      {
+        "title": "Angelo stone table",
+        "variant": "CHAMPAGNE",
+        "image": "https://d3trhmpc56lg1h.cloudfront.net/IMG/KARTELL/PRODUCTS/HD/KAR09405BL.jpg?t=big",
+        "url": "https://www.kartell.com/fr/fr/ktfr/shop/product/angelo-stone-table/272132-9012",
+        "price": 1039.0,
+        "description": "Un luminaire premium pour créer une ambiance chaleureuse et sophistiquée."
+      }
+    ]
+  }
+};
+
+
+    function renderCompactDiscovery(){
+      const groups = Object.values(productDiscovery);
+      return `
+        <div class="related-compact">
+          <span class="eyebrow">À découvrir aussi</span>
+          <h3 class="title-sm" style="margin-top:12px;margin-bottom:0">Autres collections, en toute discrétion</h3>
+          <div class="related-compact-grid">
+            ${groups.flatMap(group => group.items.map(item => `
+              <a href="${item.url}" class="related-compact-card" target="_blank" rel="noopener">
+                <img src="${item.image}" alt="${item.title}">
+                <div>
+                  <div class="pill" style="margin-bottom:8px;font-size:11px;padding:6px 8px">${group.title}</div>
+                  <h4>${item.title}${item.variant ? ` — ${item.variant}` : ''}</h4>
+                  <p>${item.description.slice(0, 90)}${item.description.length > 90 ? '…' : ''}</p>
+                  <div class="related-compact-price">${formatPrice(item.price)}</div>
+                </div>
+              </a>
+            `)).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function iconSvg(type){
+      const icons = {
+        spark:`<svg viewBox="0 0 24 24" fill="none" stroke="#3f3315" stroke-width="1.8"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/><path d="M19 2l.7 2.3L22 5l-2.3.7L19 8l-.7-2.3L16 5l2.3-.7L19 2z"/><path d="M5 16l.7 2.3L8 19l-2.3.7L5 22l-.7-2.3L2 19l2.3-.7L5 16z"/></svg>`,
+        box:`<svg viewBox="0 0 24 24" fill="none" stroke="#3f3315" stroke-width="1.8"><path d="M3 7.5L12 3l9 4.5v9L12 21 3 16.5z"/><path d="M12 21V12"/><path d="M21 7.5L12 12 3 7.5"/></svg>`,
+        grid:`<svg viewBox="0 0 24 24" fill="none" stroke="#3f3315" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>`,
+        star:`<svg viewBox="0 0 24 24" fill="none" stroke="#3f3315" stroke-width="1.8"><path d="M12 2l3 6 6.5.9-4.7 4.5 1.1 6.4L12 16.9 6.1 19.8l1.1-6.4L2.5 8.9 9 8z"/></svg>`
+      };
+      return icons[type] || icons.spark;
+    }
+
+    function formatPrice(num){
+      return num.toLocaleString('fr-FR',{style:'currency',currency:'EUR'});
+    }
+
+    function buildTrackforcesLink(productName, imageUrl){
+      const base = 'https://tkfs.trackforces.com/aff_c?offer_id=106310&aff_id=1315&aff_sub5=902121312637199&source=';
+      const safeName = encodeURIComponent(String(productName || '').trim());
+      const cleanImage = String(imageUrl || '').trim();
+      return base + safeName + '___' + cleanImage;
+    }
+
+    function buildProductCard(product){
+      const swatches = product.variants.map(v => `<span class="swatch" style="background:${v.color}"></span>`).join('');
+      return `
+        <a href="#${product.id}" class="product-card route-link">
+          <div class="product-media">
+            <span class="sale-badge">-${product.discount}%</span>
+            <img src="${product.cover}" alt="${product.name}">
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">${product.name}</h3>
+            <p class="product-sub">${product.short}</p>
+            <div class="price-row">
+              <span class="price-old">${formatPrice(product.oldPrice)}</span>
+              <span class="price-now">${formatPrice(product.price)}</span>
+              <span class="price-save">-${product.discount}%</span>
+            </div>
+            <div class="swatches">${swatches}</div>
+          </div>
+        </a>
+      `;
+    }
+
+    function buildRecommendations(currentId){
+      return products
+        .filter(p => p.id !== currentId)
+        .slice(0,4)
+        .map(buildProductCard)
+        .join('');
+    }
+
+    function renderProductPage(product){
+      const thumbs = product.variants.slice(0,4);
+      const featuresHtml = product.features.map(f => `
+        <div class="mini-feature">
+          ${iconSvg(f.icon)}
+          <strong style="display:block;margin-bottom:6px">${f.title}</strong>
+          <div class="text-soft" style="font-size:14px;line-height:1.6">${f.text}</div>
+        </div>`).join('');
+
+      const specsHtml = product.specs.map(s => `<tr><td>${s[0]}</td><td>${s[1]}</td></tr>`).join('');
+      const parcelHtml = product.parcel.map(item => `<div class="check-item"><span class="check">✓</span><div>${item}</div></div>`).join('');
+      const reviewsHtml = product.reviews.map(r => `
+        <article class="review-card">
+          <div class="review-top">
+            <img src="https://i.pravatar.cc/100?img=${r.img}" alt="${r.name}">
+            <div><div class="review-name">${r.name}</div><div class="review-meta">${r.date}</div></div>
+          </div>
+          <div class="stars">${r.rating}</div>
+          <p>${r.text}</p>
+          <span class="verified">Achat Vérifié ✓</span>
+        </article>
+      `).join('');
+
+      const variantOptions = product.variants.map((v, idx) => `
+        <option value="${idx}" ${idx===0 ? 'selected' : ''}>${v.label}</option>
+      `).join('');
+
+      const thumbsHtml = thumbs.map((t, idx) => `
+        <button class="thumb ${idx===0?'active':''}" data-product="${product.id}" data-index="${idx}">
+          <img src="${t.img}" alt="${product.name} ${t.label}">
+        </button>
+      `).join('');
+
+      const html = `
+        <div class="product-page">
+          <div class="container">
+            <div class="product-top">
+              <div class="gallery-wrap">
+                <div class="gallery-main">
+                  <img id="${product.id}-mainimg" src="${product.variants[0].img}" alt="${product.name}">
+                </div>
+                <div class="thumbs">${thumbsHtml}</div>
+              </div>
+
+              <div class="product-panel">
+                <div class="product-title-wrap">
+                  <div class="pill">Décoration premium</div>
+                  <h1 class="title-sm">${product.name}</h1>
+
+                  <a class="tp-inline" href="${trustpilotUrl}" target="_blank" rel="noopener">
+                    <span class="tp-stars">★★★★★</span>
+                    <strong>4,8/5 · 2 400+ avis sur Trustpilot</strong>
+                  </a>
+                </div>
+
+                <div class="product-price-box">
+                  <div class="price-row">
+                    <span class="price-old">${formatPrice(product.oldPrice)}</span>
+                    <span class="price-now">${formatPrice(product.price)}</span>
+                    <span class="price-save">-${product.discount}%</span>
+                  </div>
+
+                  <div class="variants">
+                    <div class="variant-label">Choisissez votre variante</div>
+                    <select class="variant-select" data-product-select="${product.id}" aria-label="Choisissez votre variante">
+                      ${variantOptions}
+                    </select>
+                  </div>
+                </div>
+
+                <div class="product-cta-stack">
+                  <div class="urgency">
+                    <strong>⚠️ LIMITÉ À 1 PRODUIT PAR COMMANDE</strong>
+                    <div class="text-soft" style="margin-top:6px;font-size:14px">En raison d'une forte demande, nous limitons les commandes à 1 unité par client.</div>
+                  </div>
+
+                  <a id="${product.id}-cta" class="btn btn-primary" href="${buildTrackforcesLink(`${product.name} ${product.variants[0].label}`.trim(), product.variants[0].img)}" target="_blank" rel="noopener">AJOUTER AU PANIER</a>
+
+                  <div class="mini-trust">
+                    <span class="pill">🚚 Livraison rapide offerte</span>
+                    <span class="pill">🔄 Retours sous 30 jours</span>
+                    <span class="pill">🔒 Paiement 100% sécurisé</span>
+                  </div>
+
+                  <a href="${trustpilotUrl}" target="_blank" rel="noopener" class="tp-inline">
+                    <span class="tp-stars">★★★★★</span>
+                    <strong>Excellent sur Trustpilot</strong>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="section">
+              <h2 class="title-sm">Pourquoi choisir ce produit</h2>
+              <div class="feature-badges">${featuresHtml}</div>
+            </div>
+
+            <div class="section">
+              <h2 class="title-sm">Caractéristiques techniques</h2>
+              <table class="specs">${specsHtml}</table>
+            </div>
+
+            <div class="section">
+              <div class="parcel">
+                <h2 class="title-sm" style="margin-bottom:0">📦 Que contient mon colis ?</h2>
+                <div class="check-list">${parcelHtml}</div>
+              </div>
+            </div>
+
+            <div class="section">
+              <h2 class="title-sm">À propos de ce produit</h2>
+              ${product.description}
+            </div>
+
+            <div class="section">
+              <div class="testimonials-wrap">
+                <h2 class="title-sm center">Avis clients sur ce produit</h2>
+                <div class="review-slider" style="margin-top:20px">${reviewsHtml}</div>
+                <div class="center" style="margin-top:20px">
+                  <a href="${trustpilotUrl}" target="_blank" rel="noopener" class="btn btn-secondary" style="max-width:320px;margin:0 auto">Voir tous les avis sur Trustpilot →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="section">
+              <h2 class="title-sm">Vous aimerez aussi</h2>
+              <div class="recommend-grid">${buildRecommendations(product.id)}</div>
+              ${renderCompactDiscovery()}
+            </div>
+          </div>
+        </div>
+      `;
+      document.getElementById(product.id).innerHTML = html;
+    }
+
+    products.forEach(renderProductPage);
+
+    function renderCollection(){
+      const grid = document.getElementById('collectionGrid');
+      const filter = document.getElementById('filterType').value;
+      const sort = document.getElementById('sortProducts').value;
+
+      let items = [...products];
+      if(filter !== 'all') items = items.filter(p => p.type === filter);
+
+      if(sort === 'priceAsc') items.sort((a,b) => a.price - b.price);
+      if(sort === 'priceDesc') items.sort((a,b) => b.price - a.price);
+      if(sort === 'discount') items.sort((a,b) => b.discount - a.discount);
+
+      grid.innerHTML = items.map(buildProductCard).join('');
+    }
+
+    function navigateTo(page) {
+      document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+      const target = document.getElementById(page);
+      if (target) {
+        target.style.display = 'block';
+        window.scrollTo({top:0,behavior:'smooth'});
+      } else {
+        document.getElementById('home').style.display = 'block';
+        page = 'home';
+      }
+      window.location.hash = page;
+      updateNav(page);
+      updateStickyBar(page);
+    }
+
+    function updateNav(page){
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const hash = link.getAttribute('href').replace('#','');
+        link.classList.toggle('active', hash === page);
+      });
+
+      document.querySelectorAll('[data-product-select]').forEach(select => {
+        select.addEventListener('change', (e) => {
+          const productId = e.target.getAttribute('data-product-select');
+          const idx = +e.target.value;
+          setVariant(productId, idx);
+        });
+      });
+    }
+
+    function updateStickyBar(page){ return; }
+
+    window.addEventListener('hashchange', () => navigateTo(location.hash.slice(1) || 'home'));
+    window.addEventListener('DOMContentLoaded', () => {
+      navigateTo(location.hash.slice(1) || 'home');
+      renderCollection();
+      renderExtraCollections();
+      initInteractions();
+      observeFade();
+    });
+
+    function initInteractions(){
+      document.getElementById('filterType').addEventListener('change', renderCollection);
+      document.getElementById('sortProducts').addEventListener('change', renderCollection);
+
+      document.getElementById('openMenu').addEventListener('click', () => {
+        document.getElementById('menuOverlay').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      });
+      document.getElementById('closeMenu').addEventListener('click', closeMenu);
+      document.getElementById('menuOverlay').addEventListener('click', (e) => {
+        if(e.target.id === 'menuOverlay') closeMenu();
+      });
+      document.querySelectorAll('.mobile-route').forEach(link => link.addEventListener('click', closeMenu));
+
+      document.querySelectorAll('[data-tabs]').forEach(tabWrap => {
+        tabWrap.querySelectorAll('.faq-tab').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const key = btn.dataset.tab;
+            tabWrap.querySelectorAll('.faq-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const scope = tabWrap.parentElement.parentElement || document;
+            scope.querySelectorAll('.faq-group').forEach(group => group.classList.remove('active'));
+            const target = scope.querySelector(`.faq-group[data-group="${key}"]`);
+            if(target) target.classList.add('active');
+          });
+        });
+      });
+
+      document.body.addEventListener('click', (e) => {
+        const accBtn = e.target.closest('.accordion-btn');
+        if(accBtn){
+          const acc = accBtn.parentElement;
+          const content = acc.querySelector('.accordion-content');
+          const active = acc.classList.contains('active');
+          const siblings = [...acc.parentElement.querySelectorAll('.accordion')];
+          siblings.forEach(a => {
+            a.classList.remove('active');
+            const c = a.querySelector('.accordion-content');
+            c.style.maxHeight = null;
+          });
+          if(!active){
+            acc.classList.add('active');
+            content.style.maxHeight = content.scrollHeight + 'px';
+          }
+        }
+
+        const thumb = e.target.closest('.thumb');
+        if(thumb){
+          const productId = thumb.dataset.product;
+          const idx = +thumb.dataset.index;
+          setVariant(productId, idx);
+        }
+      });
+    }
+
+    function closeMenu(){
+      document.getElementById('menuOverlay').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function setVariant(productId, index){
+      const product = products.find(p => p.id === productId);
+      if(!product) return;
+      const variant = product.variants[index] || product.variants[0];
+      const mainImg = document.getElementById(`${productId}-mainimg`);
+      const cta = document.getElementById(`${productId}-cta`);
+      const dynamicName = `${product.name} ${variant.label || ''}`.trim();
+      const dynamicLink = buildTrackforcesLink(dynamicName, variant.img);
+      if(mainImg) mainImg.src = variant.img;
+      if(cta) cta.href = dynamicLink;
+      document.querySelectorAll(`.thumb[data-product="${productId}"]`).forEach(btn => btn.classList.remove('active'));
+      const thumbBtn = document.querySelector(`.thumb[data-product="${productId}"][data-index="${index}"]`);
+      if(thumbBtn) thumbBtn.classList.add('active');
+
+      const select = document.querySelector(`[data-product-select="${productId}"]`);
+      if(select) select.value = String(index);
+
+      if(location.hash.slice(1) === productId){
+        document.getElementById('stickyAtcLink').href = dynamicLink;
+      }
+    }
+
+    function observeFade(){
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) entry.target.classList.add('show');
+        });
+      }, {threshold:.12});
+      document.querySelectorAll('.fade').forEach(el => io.observe(el));
+    }
+
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if(link && window.innerWidth <= 767){
+        const menu = document.getElementById('menuOverlay');
+        if(menu && menu.style.display === 'block'){
+          menu.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      }
+    });
+
+  </script>
+</body>
+</html>
